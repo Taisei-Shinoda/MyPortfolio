@@ -10,6 +10,16 @@ import CoreData
 import Foundation
 
 
+enum SortType: String {
+    case dateCreated = "creationDate"
+    case dateModified = "modificationDate"
+}
+
+enum Status {
+    case all, open, closed
+}
+
+
 class DataController: ObservableObject {
     
     let container: NSPersistentCloudKitContainer
@@ -21,6 +31,14 @@ class DataController: ObservableObject {
     @Published var filterText = ""
     
     @Published var filterTokens = [Tag]()
+    
+    @Published var filterEnabled = false
+    
+    /// 特別な優先順位(あらゆる順位)として -1
+    @Published var filterPriority = -1
+    @Published var filterStatus = Status.all
+    @Published var sortType = SortType.dateCreated
+    @Published var sortNewestFirst = true
     
     var suggestedFilterTokens: [Tag] {
         guard filterText.starts(with: "#") else {
@@ -170,6 +188,7 @@ class DataController: ObservableObject {
 
         let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
 
+        /// フィルタリングの述語
         if trimmedFilterText.isEmpty == false {
             let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
@@ -177,13 +196,30 @@ class DataController: ObservableObject {
             predicates.append(combinedPredicate)
         }
         
+        /// フィルタリングの述語
         if filterTokens.isEmpty == false {
             let tokenPredicate = NSPredicate(format: "ANY tags IN %@", filterTokens)
             predicates.append(tokenPredicate)
         }
         
+        /// フィルタリングの述語
+        if filterEnabled {
+            if filterPriority >= 0 {
+                let priorityFilter = NSPredicate(format: "priority = %d", filterPriority)
+                predicates.append(priorityFilter)
+            }
+
+            if filterStatus != .all {
+                let lookForClosed = filterStatus == .closed
+                let statusFilter = NSPredicate(format: "completed = %@", NSNumber(value: lookForClosed))
+                predicates.append(statusFilter)
+            }
+        }
+        
+        
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
 
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         return allIssues.sorted()
