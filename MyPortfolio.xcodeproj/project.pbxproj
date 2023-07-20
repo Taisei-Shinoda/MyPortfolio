@@ -19,6 +19,8 @@
 		C662C9452A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */; };
 		C662C9472A67C15700D48EFE /* Tag-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */; };
 		C662C9492A67C94900D48EFE /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9482A67C94900D48EFE /* IssueRow.swift */; };
+		C662C94B2A67D9C500D48EFE /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C94A2A67D9C500D48EFE /* IssueView.swift */; };
+		C662C94E2A67D9E600D48EFE /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C94D2A67D9E600D48EFE /* NoIssueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Issue-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		C662C9482A67C94900D48EFE /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
+		C662C94A2A67D9C500D48EFE /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
+		C662C94D2A67D9E600D48EFE /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +75,11 @@
 			children = (
 				C662C9152A657CD600D48EFE /* Info.plist */,
 				C662C9012A65266100D48EFE /* MyPortfolioApp.swift */,
+				C662C94C2A67D9C900D48EFE /* VIews */,
 				C662C9132A6572C800D48EFE /* DataController.swift */,
-				C662C9032A65266100D48EFE /* ContentView.swift */,
-				C662C9482A67C94900D48EFE /* IssueRow.swift */,
-				C662C9362A66C4FB00D48EFE /* SidebarView.swift */,
-				C662C9382A66C50700D48EFE /* DetailView.swift */,
 				C662C93A2A66C6AF00D48EFE /* Filter.swift */,
+				C662C94F2A67DDAC00D48EFE /* Helpers */,
 				C662C9102A65293100D48EFE /* Main.xcdatamodeld */,
-				C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */,
-				C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */,
 				C662C9052A65266200D48EFE /* Assets.xcassets */,
 				C662C9072A65266200D48EFE /* MyPortfolio.entitlements */,
 				C662C9082A65266200D48EFE /* Preview Content */,
@@ -93,6 +93,28 @@
 				C662C9092A65266200D48EFE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C662C94C2A67D9C900D48EFE /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				C662C9032A65266100D48EFE /* ContentView.swift */,
+				C662C9482A67C94900D48EFE /* IssueRow.swift */,
+				C662C9362A66C4FB00D48EFE /* SidebarView.swift */,
+				C662C9382A66C50700D48EFE /* DetailView.swift */,
+				C662C94A2A67D9C500D48EFE /* IssueView.swift */,
+				C662C94D2A67D9E600D48EFE /* NoIssueView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		C662C94F2A67DDAC00D48EFE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */,
+				C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +195,8 @@
 				C662C9142A6572C800D48EFE /* DataController.swift in Sources */,
 				C662C9372A66C4FB00D48EFE /* SidebarView.swift in Sources */,
 				C662C9042A65266100D48EFE /* ContentView.swift in Sources */,
+				C662C94B2A67D9C500D48EFE /* IssueView.swift in Sources */,
+				C662C94E2A67D9E600D48EFE /* NoIssueView.swift in Sources */,
 				C662C9492A67C94900D48EFE /* IssueRow.swift in Sources */,
 				C662C9022A65266100D48EFE /* MyPortfolioApp.swift in Sources */,
 			);

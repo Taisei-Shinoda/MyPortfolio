@@ -14,14 +14,17 @@ class DataController: ObservableObject {
     
     let container: NSPersistentCloudKitContainer
     
-    
     @Published var selectedFilter: Filter? = Filter.all
+    
+    @Published var selectedIssue: Issue?
     
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
         dataController.createSampleData()
         return dataController
     }()
+    
+    private var saveTask: Task<Void, Error>?
     
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
@@ -60,6 +63,24 @@ class DataController: ObservableObject {
         objectWillChange.send()
     }
     
+    func queueSave() {
+        saveTask?.cancel()
+
+        saveTask = Task { @MainActor in
+            try await Task.sleep(for: .seconds(3))
+            save()
+        }
+    }
+    
+    func missingTags(from issue: Issue) -> [Tag] {
+        let request = Tag.fetchRequest()
+        let allTags = (try? container.viewContext.fetch(request)) ?? []
+
+        let allTagsSet = Set(allTags)
+        let difference = allTagsSet.symmetricDifference(issue.issueTags)
+
+        return difference.sorted()
+    }
     
     
     func createSampleData() {
