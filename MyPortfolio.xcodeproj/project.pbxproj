@@ -21,6 +21,11 @@
 		C662C9492A67C94900D48EFE /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9482A67C94900D48EFE /* IssueRow.swift */; };
 		C662C94B2A67D9C500D48EFE /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C94A2A67D9C500D48EFE /* IssueView.swift */; };
 		C662C94E2A67D9E600D48EFE /* NoIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C94D2A67D9E600D48EFE /* NoIssueView.swift */; };
+		C662C9522A69720000D48EFE /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9512A69720000D48EFE /* Bundle-Decodable.swift */; };
+		C662C95B2A69771E00D48EFE /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = C662C9592A69771E00D48EFE /* Awards.json */; };
+		C662C95C2A69771E00D48EFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C662C95A2A69771E00D48EFE /* Colors.xcassets */; };
+		C662C95E2A69773F00D48EFE /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C95D2A69773F00D48EFE /* Award.swift */; };
+		C662C9602A69778E00D48EFE /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C95F2A69778E00D48EFE /* AwardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		C662C9482A67C94900D48EFE /* IssueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRow.swift; sourceTree = "<group>"; };
 		C662C94A2A67D9C500D48EFE /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 		C662C94D2A67D9E600D48EFE /* NoIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIssueView.swift; sourceTree = "<group>"; };
+		C662C9512A69720000D48EFE /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		C662C9592A69771E00D48EFE /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		C662C95A2A69771E00D48EFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		C662C95D2A69773F00D48EFE /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		C662C95F2A69778E00D48EFE /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +88,12 @@
 				C662C94C2A67D9C900D48EFE /* VIews */,
 				C662C9132A6572C800D48EFE /* DataController.swift */,
 				C662C93A2A66C6AF00D48EFE /* Filter.swift */,
+				C662C95D2A69773F00D48EFE /* Award.swift */,
 				C662C94F2A67DDAC00D48EFE /* Helpers */,
-				C662C9102A65293100D48EFE /* Main.xcdatamodeld */,
+				C662C9592A69771E00D48EFE /* Awards.json */,
+				C662C95A2A69771E00D48EFE /* Colors.xcassets */,
 				C662C9052A65266200D48EFE /* Assets.xcassets */,
+				C662C9102A65293100D48EFE /* Main.xcdatamodeld */,
 				C662C9072A65266200D48EFE /* MyPortfolio.entitlements */,
 				C662C9082A65266200D48EFE /* Preview Content */,
 			);
@@ -104,6 +117,7 @@
 				C662C9382A66C50700D48EFE /* DetailView.swift */,
 				C662C94A2A67D9C500D48EFE /* IssueView.swift */,
 				C662C94D2A67D9E600D48EFE /* NoIssueView.swift */,
+				C662C95F2A69778E00D48EFE /* AwardsView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 			children = (
 				C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */,
 				C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */,
+				C662C9512A69720000D48EFE /* Bundle-Decodable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -176,6 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C662C90A2A65266200D48EFE /* Preview Assets.xcassets in Resources */,
+				C662C95C2A69771E00D48EFE /* Colors.xcassets in Resources */,
+				C662C95B2A69771E00D48EFE /* Awards.json in Resources */,
 				C662C9062A65266200D48EFE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,9 +205,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C662C93B2A66C6AF00D48EFE /* Filter.swift in Sources */,
+				C662C95E2A69773F00D48EFE /* Award.swift in Sources */,
+				C662C9602A69778E00D48EFE /* AwardsView.swift in Sources */,
 				C662C9472A67C15700D48EFE /* Tag-CoreDataHelpers.swift in Sources */,
 				C662C9122A65293100D48EFE /* Main.xcdatamodeld in Sources */,
 				C662C9452A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift in Sources */,
+				C662C9522A69720000D48EFE /* Bundle-Decodable.swift in Sources */,
 				C662C9392A66C50700D48EFE /* DetailView.swift in Sources */,
 				C662C9142A6572C800D48EFE /* DataController.swift in Sources */,
 				C662C9372A66C4FB00D48EFE /* SidebarView.swift in Sources */,
