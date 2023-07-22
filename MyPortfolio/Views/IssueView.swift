@@ -17,7 +17,7 @@ struct IssueView: View {
         Form {
             Section {
                 VStack(alignment: .leading) {
-                    TextField("Title", text: $issue.issueTitle, prompt: Text("ここにタイトルを入力"))
+                    TextField("Title", text: $issue.issueTitle, prompt: Text("Enter the issue title here"))
                         .font(.title)
                     
                     
@@ -77,7 +77,7 @@ struct IssueView: View {
                         .font(.title2)
                         .foregroundStyle(.secondary)
                     
-                    TextField("説明", text: $issue.issueContent, prompt: Text("説明内容"), axis: .vertical)
+                    TextField("Description", text: $issue.issueContent, prompt: Text("Enter the issue description here"), axis: .vertical)
                 }
             }
         }
@@ -94,17 +94,17 @@ struct IssueView: View {
                 Button {
                     UIPasteboard.general.string = issue.title
                 } label: {
-                    Label("コピー", systemImage: "doc.on.doc")
+                    Label("Copy Issue Title", systemImage: "doc.on.doc")
                 }
 
                 Button {
                     issue.completed.toggle()
                     dataController.save()
                 } label: {
-                    Label(issue.completed ? "再度開く" : "閉じる", systemImage: "bubble.left.and.exclamationmark.bubble.right")
+                    Label(issue.completed ? "Re-open Issue" : "Close Issue", systemImage: "bubble.left.and.exclamationmark.bubble.right")
                 }
             } label: {
-                Label("アクション", systemImage: "ellipsis.circle")
+                Label("Actions", systemImage: "ellipsis.circle")
             }
         }
     }

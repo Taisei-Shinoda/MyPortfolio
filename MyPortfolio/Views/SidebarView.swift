@@ -31,7 +31,7 @@ struct SidebarView: View {
             Section("Smart Filters") {
                 ForEach(smartFilters) { filter in
                     NavigationLink(value: filter) {
-                        Label(filter.name, systemImage: filter.icon)
+                        Label(LocalizedStringKey(filter.name), systemImage: filter.icon)
                     }
                 }
             }
@@ -45,13 +45,13 @@ struct SidebarView: View {
                                 Button {
                                     rename(filter)
                                 } label: {
-                                    Label("リネーム", systemImage: "pencil")
+                                    Label("Rename", systemImage: "pencil")
                                 }
                                 
                                 Button(role: .destructive) {
                                     delete(filter)
                                 } label: {
-                                    Label("消去", systemImage: "trash")
+                                    Label("Delete", systemImage: "trash")
                                 }
                             }
                             .accessibilityElement()
@@ -64,13 +64,13 @@ struct SidebarView: View {
         }
         .toolbar {
             Button(action: dataController.newTag) {
-                Label("タグを追加", systemImage: "plus")
+                Label("Add tag", systemImage: "plus")
             }
             
             Button {
                 showingAwards.toggle()
             } label: {
-                Label("賞を公開", systemImage: "rosette")
+                Label("Show awards", systemImage: "rosette")
             }
             
             #if DEBUG
@@ -82,13 +82,13 @@ struct SidebarView: View {
             }
             #endif
         }
-        .alert("タグのリネーム", isPresented: $renamingTag) {
+        .alert("Rename tag", isPresented: $renamingTag) {
             Button("OK", action: completeRename)
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $tagName)
         }
         .sheet(isPresented: $showingAwards, content: AwardsView.init)
-        .navigationTitle("フィルター")
+        .navigationTitle("Filters")
     }
     
     func delete(_ offsets: IndexSet) {

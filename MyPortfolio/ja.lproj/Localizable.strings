@@ -1,0 +1,101 @@
+/* 
+  Localizable.strings
+  MyPortfolio
+
+  Created by Taisei Shinoda on 2023/07/22.
+  
+*/
+
+/* GENERAL STRINGS */
+"OK" = "OK";
+"Cancel" = "キャンセル";
+"Delete" = "消去";
+"Rename" = "名前を編集";
+"Actions" = "アクション";
+
+
+
+/* SIDEBARVIEW */
+"Filters" = "フィルター";
+"Smart Filters" = "スマートフィルター";
+"All Issues" = "全ての課題";
+"Recent Issues" = "最近の課題";
+"Tags" = "タグ";
+"Add tag" = "タグの追加";
+"Show awards" = "受賞";
+
+"Rename tag" = "名前を編集";
+"New name" = "新しい名前";
+
+
+
+/* CONTENTVIEW */
+"Issues" = "課題";
+
+/* A button that shows a menu with the following options */
+"Filter" = "フィルター";
+"Turn Filter On" = "フィルター オン"; /* Enables filtering */
+"Turn Filter Off" = "フィルター オフ"; /* Disables filtering */
+"Sort By" = "並び順"; /* Adjust the order issues are shown */
+"Date Created" = "作成日"; /* Sort issues by the date they were created */
+"Date Modified" = "変更日"; /* Sort issues by the date they were last changed */
+"Newest to Oldest" = "新規"; /* Place newer issues before older issues */
+"Oldest to Newest" = "古い"; /* Place older issues before newer issues */
+
+"All" = "全て";
+"Open" = "開く";
+"Closed" = "閉じる";
+
+"Low" = "低";
+"Medium" = "中";
+"High" = "高";
+
+/* Create a new issue */
+"New Issue" = "新しい課題";
+
+/* A text placeholder, to help users search */
+"Filter issues, or type # to add tags" = "タグを追加するには # を入力";
+
+/* Shown as a status for closed issues */
+"CLOSED" = "閉じる";
+
+
+
+/* DETAILSVIEW */
+"Details" = "詳細";
+
+/* NOISSUEVIEW */
+"No Issue Selected" = "課題が選択されていない";
+
+/* ISSUEVIEW */
+"Copy Issue Title" = "コピー";
+"Close Issue" = "閉じる";
+"Re-open Issue" = "再度開く";
+
+/* Fields that let the users enter details about a specific issue */
+"Enter the issue title here" = "課題のタイトルを追加";
+"**Modified:** %@" = "**Modified:** %@";
+"**Status:** %@" = "**Status:** %@";
+"Priority" = "優先度";
+"Add Tags" = "タグを追加";
+"Basic Information" = "基本情報";
+"Enter the issue description here" = "課題の詳細を入力";
+
+
+
+/* AWARDS VIEW */
+"Awards" = "受賞";
+"Unlocked" = "ロック解除";
+"Locked" = "ロック";
+
+
+
+/* DATA */
+"New tag" = "新しいタグ";
+"New issue" = "新しい課題";
+
+
+
+/* DEBUG ONLY */
+"ADD SAMPLES" = "ADD SAMPLES";
+

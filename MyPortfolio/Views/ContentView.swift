@@ -19,53 +19,53 @@ struct ContentView: View {
             .onDelete(perform: delete)
         }
         .navigationTitle("Issues")
-        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, suggestedTokens: .constant(dataController.suggestedFilterTokens), prompt: "フィルタリング,または # を入力してタグを追加") { tag in
+        .searchable(text: $dataController.filterText, tokens: $dataController.filterTokens, suggestedTokens: .constant(dataController.suggestedFilterTokens), prompt: "Filter issues, or type # to add tags") { tag in
             Text(tag.tagName)
         }
         .toolbar {
             Menu {
-                Button(dataController.filterEnabled ? "オフ" : "オン") {
+                Button(dataController.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                     dataController.filterEnabled.toggle()
                 }
                 
                 Divider()
                 
-                Menu("並び替え") {
-                    Picker("並び替え", selection: $dataController.sortType) {
-                        Text("作成日").tag(SortType.dateCreated)
-                        Text("変更日").tag(SortType.dateModified)
+                Menu("Sort By") {
+                    Picker("Sort By", selection: $dataController.sortType) {
+                        Text("Date Created").tag(SortType.dateCreated)
+                        Text("Date Modified").tag(SortType.dateModified)
                     }
                     
                     Divider()
                     
-                    Picker("並べ替え順", selection: $dataController.sortNewestFirst) {
-                        Text("新規").tag(true)
-                        Text("古い").tag(false)
+                    Picker("Sort Order", selection: $dataController.sortNewestFirst) {
+                        Text("Newest to Oldest").tag(true)
+                        Text("Oldest to Newest").tag(false)
                     }
                 }
                 
-                Picker("ステータス", selection: $dataController.filterStatus) {
-                    Text("全て").tag(Status.all)
-                    Text("開く").tag(Status.open)
-                    Text("閉じる").tag(Status.closed)
+                Picker("Status", selection: $dataController.filterStatus) {
+                    Text("All").tag(Status.all)
+                    Text("Open").tag(Status.open)
+                    Text("Closed").tag(Status.closed)
                 }
                 .disabled(dataController.filterEnabled == false)
                 
-                Picker("優先順位", selection: $dataController.filterPriority) {
-                    Text("全て").tag(-1)
-                    Text("低").tag(0)
-                    Text("中").tag(1)
-                    Text("高").tag(2)
+                Picker("Priority", selection: $dataController.filterPriority) {
+                    Text("All").tag(-1)
+                    Text("Low").tag(0)
+                    Text("Medium").tag(1)
+                    Text("High").tag(2)
                 }
                 .disabled(dataController.filterEnabled == false)
                 
             } label: {
-                Label("フィルター", systemImage: "line.3.horizontal.decrease.circle")
+                Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
                     .symbolVariant(dataController.filterEnabled ? .fill : .none)
             }
             
             Button(action: dataController.newIssue) {
-                Label("New issue", systemImage: "square.and.pencil")
+                Label("New Issue", systemImage: "square.and.pencil")
             }
         }
     }
