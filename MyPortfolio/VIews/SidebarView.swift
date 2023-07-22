@@ -45,7 +45,13 @@ struct SidebarView: View {
                                 Button {
                                     rename(filter)
                                 } label: {
-                                    Label("Rename", systemImage: "pencil")
+                                    Label("リネーム", systemImage: "pencil")
+                                }
+                                
+                                Button(role: .destructive) {
+                                    delete(filter)
+                                } label: {
+                                    Label("消去", systemImage: "trash")
                                 }
                             }
                     }
@@ -55,13 +61,13 @@ struct SidebarView: View {
         }
         .toolbar {
             Button(action: dataController.newTag) {
-                Label("Add tag", systemImage: "plus")
+                Label("タグを追加", systemImage: "plus")
             }
             
             Button {
                 showingAwards.toggle()
             } label: {
-                Label("Show awards", systemImage: "rosette")
+                Label("賞を公開", systemImage: "rosette")
             }
             
             #if DEBUG
@@ -73,12 +79,13 @@ struct SidebarView: View {
             }
             #endif
         }
-        .alert("Rename tag", isPresented: $renamingTag) {
+        .alert("タグのリネーム", isPresented: $renamingTag) {
             Button("OK", action: completeRename)
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $tagName)
         }
         .sheet(isPresented: $showingAwards, content: AwardsView.init)
+        .navigationTitle("フィルター")
     }
     
     func delete(_ offsets: IndexSet) {
@@ -96,6 +103,12 @@ struct SidebarView: View {
     
     func completeRename() {
         tagToRename?.name = tagName
+        dataController.save()
+    }
+    
+    func delete(_ filter: Filter) {
+        guard let tag = filter.tag else { return }
+        dataController.delete(tag)
         dataController.save()
     }
 }
