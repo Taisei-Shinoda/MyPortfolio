@@ -28,6 +28,12 @@
 		C6DC5C7D2A6BB9C500512469 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C7F2A6BB9C500512469 /* Localizable.strings */; };
 		C6DC5C822A6BBA8F00512469 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C842A6BBA8F00512469 /* Localizable.stringsdict */; };
 		C6DC5C862A6BC0F700512469 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C882A6BC0F700512469 /* Awards.json */; };
+		C6DC5C8D2A6C0B5B00512469 /* SidebarViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C8C2A6C0B5B00512469 /* SidebarViewToolbar.swift */; };
+		C6DC5C8F2A6C0DBD00512469 /* IssueViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C8E2A6C0DBD00512469 /* IssueViewToolbar.swift */; };
+		C6DC5C912A6C0ED100512469 /* ContentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C902A6C0ED100512469 /* ContentViewToolbar.swift */; };
+		C6DC5C932A6C100800512469 /* TagsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C922A6C100800512469 /* TagsMenuView.swift */; };
+		C6DC5C952A6C11E300512469 /* SmartFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C942A6C11E300512469 /* SmartFilterRow.swift */; };
+		C6DC5C972A6C12B500512469 /* UserFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5C962A6C12B500512469 /* UserFilterRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,12 @@
 		C6DC5C852A6BBA9200512469 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		C6DC5C872A6BC0F700512469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
 		C6DC5C892A6BC0F900512469 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/Awards.json; sourceTree = "<group>"; };
+		C6DC5C8C2A6C0B5B00512469 /* SidebarViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewToolbar.swift; sourceTree = "<group>"; };
+		C6DC5C8E2A6C0DBD00512469 /* IssueViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewToolbar.swift; sourceTree = "<group>"; };
+		C6DC5C902A6C0ED100512469 /* ContentViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewToolbar.swift; sourceTree = "<group>"; };
+		C6DC5C922A6C100800512469 /* TagsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsMenuView.swift; sourceTree = "<group>"; };
+		C6DC5C942A6C11E300512469 /* SmartFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFilterRow.swift; sourceTree = "<group>"; };
+		C6DC5C962A6C12B500512469 /* UserFilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +133,15 @@
 			isa = PBXGroup;
 			children = (
 				C662C9032A65266100D48EFE /* ContentView.swift */,
+				C6DC5C902A6C0ED100512469 /* ContentViewToolbar.swift */,
 				C662C94A2A67D9C500D48EFE /* IssueView.swift */,
+				C6DC5C922A6C100800512469 /* TagsMenuView.swift */,
+				C6DC5C8E2A6C0DBD00512469 /* IssueViewToolbar.swift */,
 				C662C9482A67C94900D48EFE /* IssueRow.swift */,
 				C662C9362A66C4FB00D48EFE /* SidebarView.swift */,
+				C6DC5C942A6C11E300512469 /* SmartFilterRow.swift */,
+				C6DC5C962A6C12B500512469 /* UserFilterRow.swift */,
+				C6DC5C8C2A6C0B5B00512469 /* SidebarViewToolbar.swift */,
 				C662C9382A66C50700D48EFE /* DetailView.swift */,
 				C662C94D2A67D9E600D48EFE /* NoIssueView.swift */,
 				C662C95F2A69778E00D48EFE /* AwardsView.swift */,
@@ -217,7 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C662C93B2A66C6AF00D48EFE /* Filter.swift in Sources */,
+				C6DC5C932A6C100800512469 /* TagsMenuView.swift in Sources */,
 				C662C95E2A69773F00D48EFE /* Award.swift in Sources */,
+				C6DC5C8F2A6C0DBD00512469 /* IssueViewToolbar.swift in Sources */,
+				C6DC5C952A6C11E300512469 /* SmartFilterRow.swift in Sources */,
 				C662C9602A69778E00D48EFE /* AwardsView.swift in Sources */,
 				C662C9472A67C15700D48EFE /* Tag-CoreDataHelpers.swift in Sources */,
 				C662C9122A65293100D48EFE /* Main.xcdatamodeld in Sources */,
@@ -225,9 +246,12 @@
 				C662C9522A69720000D48EFE /* Bundle-Decodable.swift in Sources */,
 				C662C9392A66C50700D48EFE /* DetailView.swift in Sources */,
 				C662C9142A6572C800D48EFE /* DataController.swift in Sources */,
+				C6DC5C912A6C0ED100512469 /* ContentViewToolbar.swift in Sources */,
 				C662C9372A66C4FB00D48EFE /* SidebarView.swift in Sources */,
 				C662C9042A65266100D48EFE /* ContentView.swift in Sources */,
+				C6DC5C8D2A6C0B5B00512469 /* SidebarViewToolbar.swift in Sources */,
 				C662C94B2A67D9C500D48EFE /* IssueView.swift in Sources */,
+				C6DC5C972A6C12B500512469 /* UserFilterRow.swift in Sources */,
 				C662C94E2A67D9E600D48EFE /* NoIssueView.swift in Sources */,
 				C662C9492A67C94900D48EFE /* IssueRow.swift in Sources */,
 				C662C9022A65266100D48EFE /* MyPortfolioApp.swift in Sources */,
