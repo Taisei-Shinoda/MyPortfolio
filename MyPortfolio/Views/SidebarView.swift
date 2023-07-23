@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct SidebarView: View {
-    
     @EnvironmentObject var dataController: DataController
     let smartFilters: [Filter] = [.all, .recent]
-    
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var tags: FetchedResults<Tag>
-    
     @State private var tagToRename: Tag?
     @State private var renamingTag = false
     @State private var tagName = ""
-
     @State private var showingAwards = false
-    
     var tagFilters: [Filter] {
         tags.map { tag in
             Filter(id: tag.tagID, name: tag.tagName, icon: "tag", tag: tag)

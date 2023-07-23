@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// swiftlint:disable line_length
 extension Bundle {
     func decode<T: Decodable>(_ file: String, as type: T.Type = T.self,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
@@ -22,6 +22,7 @@ extension Bundle {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = dateDecodingStrategy
         decoder.keyDecodingStrategy = keyDecodingStrategy
+        
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
@@ -36,7 +37,5 @@ extension Bundle {
             fatalError("バンドルからの \(file) デコードに失敗しました: \(error.localizedDescription)")
         }
     }
-    
 }
-
-
+// swiftlint:enable line_length

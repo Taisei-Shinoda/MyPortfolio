@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct IssueView: View {
-    
     @ObservedObject var issue: Issue
     @EnvironmentObject var dataController: DataController
-    
-    
     var body: some View {
         Form {
             Section {
                 VStack(alignment: .leading) {
                     TextField("Title", text: $issue.issueTitle, prompt: Text("Enter the issue title here"))
                         .font(.title)
-                    
                     
                     /// マークダウン ( ** -- **)
                     Text("**Modified:** \(issue.issueModificationDate.formatted(date: .long, time: .shortened))")
@@ -45,7 +41,12 @@ struct IssueView: View {
                         .font(.title2)
                         .foregroundStyle(.secondary)
                     
-                    TextField("Description", text: $issue.issueContent, prompt: Text("Enter the issue description here"), axis: .vertical)
+                    TextField(
+                        "Description",
+                        text: $issue.issueContent,
+                        prompt: Text("Enter the issue description here"),
+                        axis: .vertical
+                    )
                 }
             }
         }

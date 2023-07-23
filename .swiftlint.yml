@@ -1,0 +1,4 @@
+disabled_rules:
+- operator_whitespace
+- trailing_whitespace
+- vertical_whitespace

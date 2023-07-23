@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct TagsMenuView: View {
-    
     @ObservedObject var issue: Issue
     @EnvironmentObject var dataController: DataController
-    
     var body: some View {
         Menu {
             // 選択されたタグ
@@ -22,7 +20,6 @@ struct TagsMenuView: View {
                     Label(tag.tagName, systemImage: "checkmark")
                 }
             }
-            
             // 未選択のタグ
             let otherTags = dataController.missingTags(from: issue)
             

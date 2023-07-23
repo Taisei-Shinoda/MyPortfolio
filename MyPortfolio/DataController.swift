@@ -25,18 +25,16 @@ class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
     @Published var selectedFilter: Filter? = Filter.all
-    
     @Published var selectedIssue: Issue?
-    
     @Published var filterText = ""
-    
     @Published var filterTokens = [Tag]()
-    
     @Published var filterEnabled = false
+    
     /// 特別な優先順位(あらゆる順位)として -1
     @Published var filterPriority = -1
     @Published var filterStatus = Status.all
     @Published var sortType = SortType.dateCreated
+    
     @Published var sortNewestFirst = true
     
     var suggestedFilterTokens: [Tag] {
@@ -84,10 +82,16 @@ class DataController: ObservableObject {
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
         /// 3. 最初のメソッドは、ストアが変更されたときに通知されるようにCore Dataに指示し、2番目のメソッドは、変更が発生するたびにメソッドを呼び出すようにシステムに指示
-        container.persistentStoreDescriptions.first?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: container.persistentStoreCoordinator, queue: .main, using: remoteStoreChanged)
+        container.persistentStoreDescriptions.first?.setOption(
+            true as NSNumber,
+            forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange,
+            object: container.persistentStoreCoordinator,
+            queue: .main,
+            using: remoteStoreChanged)
         
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error {
                 fatalError("ロードに失敗: \(error.localizedDescription)")
             }
@@ -122,14 +126,14 @@ class DataController: ObservableObject {
     func createSampleData() {
         let viewContext = container.viewContext
         
-        for i in 1...5 {
+        for tagCounter in 1...5 {
             let tag = Tag(context: viewContext)
             tag.id = UUID()
-            tag.name = "Tag \(i)"
+            tag.name = "Tag \(tagCounter)"
             
-            for j in 1...10 {
+            for issueCounter in 1...10 {
                 let issue = Issue(context: viewContext)
-                issue.title = "Issue \(i)-\(j)"
+                issue.title = "Issue \(tagCounter)-\(issueCounter)"
                 issue.content = "説明文"
                 issue.creationDate = .now
                 issue.completed = Bool.random()
@@ -192,7 +196,11 @@ class DataController: ObservableObject {
         if trimmedFilterText.isEmpty == false {
             let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
-            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+            
+            let combinedPredicate = NSCompoundPredicate(
+                orPredicateWithSubpredicates: [titlePredicate, contentPredicate]
+            )
+            
             predicates.append(combinedPredicate)
         }
         
