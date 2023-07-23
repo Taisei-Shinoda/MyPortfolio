@@ -7,7 +7,7 @@
 
 import Foundation
 
-// swiftlint:disable line_length
+
 extension Bundle {
     func decode<T: Decodable>(_ file: String, as type: T.Type = T.self,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
@@ -38,4 +38,3 @@ extension Bundle {
         }
     }
 }
-// swiftlint:enable line_length

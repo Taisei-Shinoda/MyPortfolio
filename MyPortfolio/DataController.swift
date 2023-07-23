@@ -20,6 +20,7 @@ enum Status {
 }
 
 
+/// 保存処理、フェッチリクエストのカウント、アワードのトラッキング、サンプルデータの処理など
 class DataController: ObservableObject {
     
     let container: NSPersistentCloudKitContainer
@@ -60,25 +61,29 @@ class DataController: ObservableObject {
     
     private var saveTask: Task<Void, Error>?
     
+    
+    /// データコントローラーを初期化する
+    /// - Parameter inMemory: データを一時メモリに保存するかどうか
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         
+        // テストとプレビューの目的で、/dev/null に書き込むことによる一時的なメモリ内データベース
+        // アプリの実行終了後にデータは破棄される
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
         
-        /*
-         ユーザーがアプリを再起動するのを待つのではなく、変更があったときにUIを即座に更新させる。
-         1. 永続ストアに発生した変更をビューコンテキストに自動的に適用し、2つの同期を維持する。
-         2. ローカルデータとリモートデータのマージ処理方法をCore Dataに指示と処理の方法を教える。
-         3. コードの外部で発生した変更を検出し、UI を更新させる。
-         　　たとえば、iPhone と Mac の両方でアプリを実行している場合、iPhone で問題を削除すると Mac で変更通知がトリガーされるため、2 つのアプリは完全に同期された状態が維持される。
-         
-         */
+        
+        /// ユーザーがアプリを再起動するのを待つのではなく、変更があったときにUIを即座に更新させる。
+        /// 1. 永続ストアに発生した変更をビューコンテキストに自動的に適用し、2つの同期を維持する。
+        /// 2. ローカルデータとリモートデータのマージ処理方法をCore Dataに指示と処理の方法を教える。
+        /// 3. コードの外部で発生した変更を検出し、UI を更新させる。
+        /// たとえば、iPhone と Mac の両方でアプリを実行している場合、iPhone で問題を削除すると Mac で変更通知がトリガーされるため、2 つのアプリは完全に同期された状態が維持される。
+        
         /// 1. 管理対象のビューコンテキストのBooleanプロパティを有効にすることで、Core Dataに処理を任せることができる
         container.viewContext.automaticallyMergesChangesFromParent = true
         
-        /// 2.
+        /// 2.メモリ内バージョンの間の競合を解決
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
         /// 3. 最初のメソッドは、ストアが変更されたときに通知されるようにCore Dataに指示し、2番目のメソッドは、変更が発生するたびにメソッドを呼び出すようにシステムに指示
