@@ -3,3 +3,4 @@ disabled_rules:
 - trailing_whitespace
 - vertical_whitespace
 - vertical_parameter_alignment
+- line_length

@@ -40,5 +40,3 @@ struct Filter: Identifiable, Hashable {
         lhs.id == rhs.id
     }
 }
-
-

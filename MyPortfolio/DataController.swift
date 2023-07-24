@@ -25,6 +25,20 @@ class DataController: ObservableObject {
     
     let container: NSPersistentCloudKitContainer
     
+    /// Core Data がエンティティを登録する際の競合を防ぐため [1]
+    /// マネージド オブジェクト モデル (Main.momd ファイル) を 1 回だけロードするように指示
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError("Failed to locate model file.")
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file.")
+        }
+
+        return managedObjectModel
+    }()
+    
     @Published var selectedFilter: Filter? = Filter.all
     @Published var selectedIssue: Issue?
     @Published var filterText = ""
@@ -65,7 +79,10 @@ class DataController: ObservableObject {
     /// データコントローラーを初期化する
     /// - Parameter inMemory: データを一時メモリに保存するかどうか
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Main")
+        
+//        container = NSPersistentCloudKitContainer(name: "Main")
+        /// Core Data がエンティティを登録する際の競合を防ぐため [2]
+        container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         // テストとプレビューの目的で、/dev/null に書き込むことによる一時的なメモリ内データベース
         // アプリの実行終了後にデータは破棄される
