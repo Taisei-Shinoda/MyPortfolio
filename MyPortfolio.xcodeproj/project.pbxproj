@@ -39,6 +39,7 @@
 		C6DC5CB22A6D5C1500512469 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5CB12A6D5C1500512469 /* TagTests.swift */; };
 		C6DC5CB42A6D602700512469 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5CB32A6D602700512469 /* AwardTests.swift */; };
 		C6DC5CB62A6E62A800512469 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5CB52A6E62A800512469 /* DevelopmentTests.swift */; };
+		C6DC5CC32A6E7BE800512469 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC5CC22A6E7BE800512469 /* PerformanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		C6DC5CB12A6D5C1500512469 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		C6DC5CB32A6D602700512469 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		C6DC5CB52A6E62A800512469 /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
+		C6DC5CC22A6E7BE800512469 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				C6DC5CB12A6D5C1500512469 /* TagTests.swift */,
 				C6DC5CB52A6E62A800512469 /* DevelopmentTests.swift */,
 				C6DC5CB32A6D602700512469 /* AwardTests.swift */,
+				C6DC5CC22A6E7BE800512469 /* PerformanceTests.swift */,
 				C6DC5CA72A6D515400512469 /* MyPortfolioTests.swift */,
 				C6DC5CAE2A6D545600512469 /* TestPlan.xctestplan */,
 			);
@@ -401,6 +404,7 @@
 			files = (
 				C6DC5CB02A6D57E100512469 /* AssetTests.swift in Sources */,
 				C6DC5CB42A6D602700512469 /* AwardTests.swift in Sources */,
+				C6DC5CC32A6E7BE800512469 /* PerformanceTests.swift in Sources */,
 				C6DC5CB22A6D5C1500512469 /* TagTests.swift in Sources */,
 				C6DC5CA82A6D515400512469 /* MyPortfolioTests.swift in Sources */,
 				C6DC5CB62A6E62A800512469 /* DevelopmentTests.swift in Sources */,
