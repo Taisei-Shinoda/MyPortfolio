@@ -119,13 +119,15 @@ class DataController: ObservableObject {
             if let error {
                 fatalError("ロードに失敗: \(error.localizedDescription)")
             }
-            /// デバッグ モード
-            /// UI テスト ターゲット用であり、アプリがテスト環境にあることを認識できるようにその起動引数を認識し、既存のデータを削除してその構成に応答するコードを追加
+            
+            /// UI テスト ターゲット用のデバッグ モード
+            /// if let error = エラーコードが実行され、Core Dataスタックのロードが完了した場合テストのための白紙の状態にするためのエントリポイント
+            /// アプリがテスト環境にあることを認識できるようにその起動引数を認識し、既存のデータを削除してその構成に応答するコードを追加
             #if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
                 self.deleteAll()
                 /// アプリのすべてのアニメーションが無効になり、UI テストが大幅に高速化される
-                UIView.setAnimationsEnabled(false)
+//                UIView.setAnimationsEnabled(false)
             }
             #endif
             

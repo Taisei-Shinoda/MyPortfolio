@@ -2,7 +2,7 @@
 //  MyPortfolioUITestsLaunchTests.swift
 //  MyPortfolioUITests
 //
-//  Created by Taisei Shinoda on 2023/07/24.
+//  Created by Taisei Shinoda on 2023/08/21.
 //
 
 import XCTest
@@ -29,5 +29,4 @@ final class MyPortfolioUITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
-    
 }
