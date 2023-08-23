@@ -8,7 +8,7 @@
 
 import CoreData
 import Foundation
-import UIKit
+import SwiftUI
 
 
 enum SortType: String {
@@ -127,7 +127,7 @@ class DataController: ObservableObject {
             if CommandLine.arguments.contains("enable-testing") {
                 self.deleteAll()
                 /// アプリのすべてのアニメーションが無効になり、UI テストが大幅に高速化される
-//                UIView.setAnimationsEnabled(false)
+                UIView.setAnimationsEnabled(false)
             }
             #endif
             

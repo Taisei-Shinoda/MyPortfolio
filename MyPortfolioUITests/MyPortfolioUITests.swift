@@ -8,7 +8,7 @@
 import XCTest
 
 final class MyPortfolioUITests: XCTestCase {
-
+    
     /// すぐに作成され、アサーションが行われる前に破棄されることがないため、暗黙的にラップを解除できる
     var app: XCUIApplication!
     
@@ -22,11 +22,15 @@ final class MyPortfolioUITests: XCTestCase {
         app.launch()
         
     }
-
+    
     /// ナビゲーションバー要素は存在するか？
     func testAppStartsWithNavigationBar() throws {
         XCTAssertTrue(app.navigationBars.element.exists, "アプリの起動時にナビゲーションバーが表示される")
     }
     
+    func testNoIssuesAtStart() {
+        XCTAssertEqual(app.cells.count, 0, "最初のリストは0である")
+    }
     
 }
+
