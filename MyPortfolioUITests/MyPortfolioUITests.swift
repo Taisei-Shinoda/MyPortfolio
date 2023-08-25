@@ -32,5 +32,33 @@ final class MyPortfolioUITests: XCTestCase {
         XCTAssertEqual(app.cells.count, 0, "最初のリストは0である")
     }
     
-}
+    func testExample() {
+        app.buttons.images
+    }
+    
+    // MARK: - テストエラー（解決策わからず、、、）
+    func testAllAwardsShowLockedAlert() {
+        app.buttons["Filters"].tap()
+        app.buttons["Show awards"].tap()
 
+        for award in app.scrollViews.buttons.allElementsBoundByIndex {
+            award.tap()
+            XCTAssertTrue(app.alerts["Locked"].exists, "アワードにはLockedアラートが表示されているはず")
+            app.buttons["OK"].tap()
+        }
+    }
+
+    func testCreatingAndDeletingIssues() {
+        for tapCount in 1...5 {
+            app.buttons["New Issue"].tap()
+            app.buttons["Issues"].tap()
+            XCTAssertEqual(app.cells.count, tapCount, "リストには \(tapCount) 行あるはず")
+        }
+
+        for tapCount in (0...4).reversed() {
+            app.cells.firstMatch.swipeLeft()
+            app.buttons["Delete"].tap()
+            XCTAssertEqual(app.cells.count, tapCount, "リストには \(tapCount) 行あるはず")
+        }
+    }
+}
