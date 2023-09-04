@@ -31,11 +31,6 @@ final class MyPortfolioUITests: XCTestCase {
     func testNoIssuesAtStart() {
         XCTAssertEqual(app.cells.count, 0, "最初のリストは0である")
     }
-    
-    func testExample() {
-        app.buttons.images
-    }
-    
     // MARK: - テストエラー（解決策わからず、、、）
     func testAllAwardsShowLockedAlert() {
         app.buttons["Filters"].tap()
