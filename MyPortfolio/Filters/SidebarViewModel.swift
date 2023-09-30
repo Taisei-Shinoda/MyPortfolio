@@ -29,7 +29,6 @@ extension SidebarView {
             }
         }
         
-        
         var dataController: DataController
         
         init(dataController: DataController) {

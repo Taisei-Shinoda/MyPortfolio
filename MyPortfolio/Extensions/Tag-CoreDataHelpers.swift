@@ -12,18 +12,13 @@ extension Tag {
     var tagID: UUID {
         id ?? UUID()
     }
-
     var tagName: String {
         name ?? ""
     }
-    
-    
     var tagActiveIssues: [Issue] {
         let result = issues?.allObjects as? [Issue] ?? []
         return result.filter { $0.completed == false }
     }
-    
-    
     /// プレビュー用
     static var example: Tag {
         let controller = DataController(inMemory: true)
@@ -35,7 +30,6 @@ extension Tag {
         return tag
     }
 }
-
 
 extension Tag: Comparable {
     public static func <(lhs: Tag, rhs: Tag) -> Bool {

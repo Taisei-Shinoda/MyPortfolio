@@ -29,8 +29,6 @@ struct ContentView: View {
         .toolbar(content: ContentViewToolbar.init)
     }
     
-    
-    
     func delete(_ offsets: IndexSet) {
         let issues = dataController.issuesForSelectedFilter()
         

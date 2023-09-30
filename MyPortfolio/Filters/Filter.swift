@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Filter: Identifiable, Hashable {
     var id: UUID
     var name: String
