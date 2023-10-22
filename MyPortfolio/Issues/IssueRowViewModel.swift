@@ -8,6 +8,8 @@
 import Foundation
 
 extension IssueRow {
+    /// ラップされたオブジェクトと外の世界の間のブリッジとして機能する添え字を追加する
+    @dynamicMemberLookup
     class ViewModel: ObservableObject {
         let issue: Issue
         
@@ -31,6 +33,11 @@ extension IssueRow {
         
         init(issue: Issue) {
             self.issue = issue
+        }
+        
+        /// プロパティを動的に検索(ビュー モデル上でissueのプロパティに直接アクセスできるようにする)
+        subscript<Value>(dynamicMember keyPath: KeyPath<Issue, Value>) -> Value {
+            issue[keyPath: keyPath]
         }
     }
     
