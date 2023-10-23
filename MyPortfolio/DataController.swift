@@ -26,6 +26,10 @@ class DataController: ObservableObject {
     
     let container: NSPersistentCloudKitContainer
     
+    /// Core Spotlight添字を保存し、CoreDataがデータへの変更をトラッキング可能にする
+    var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+    
+    
     /// Core Data がエンティティを登録する際の競合を防ぐため [1]
     /// マネージド オブジェクト モデル (Main.momd ファイル) を 1 回だけロードするように指示
     static let model: NSManagedObjectModel = {
@@ -114,18 +118,33 @@ class DataController: ObservableObject {
             queue: .main,
             using: remoteStoreChanged)
         
-        container.loadPersistentStores { _, error in
+        container.loadPersistentStores { [weak self] _, error in
             /// 成功または失敗にかかわらず、コア データ スタックの読み込みが完了したことを意味
             if let error {
                 fatalError("ロードに失敗: \(error.localizedDescription)")
             }
+            
+            /// Spotlight でのトラッキングを可能にする
+            if let description = self?.container.persistentStoreDescriptions.first {
+                description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+
+                if let coordinator = self?.container.persistentStoreCoordinator {
+                    self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
+                        forStoreWith: description,
+                        coordinator: coordinator
+                    )
+                    /// インデックス作成デリゲートを作成
+                    self?.spotlightDelegate?.startSpotlightIndexing()
+                }
+            }
+
             
             /// UI テスト ターゲット用のデバッグ モード
             /// if let error = エラーコードが実行され、Core Dataスタックのロードが完了した場合テストのための白紙の状態にするためのエントリポイント
             /// アプリがテスト環境にあることを認識できるようにその起動引数を認識し、既存のデータを削除してその構成に応答するコードを追加
             #if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
-                self.deleteAll()
+                self?.deleteAll()
                 /// アプリのすべてのアニメーションが無効になり、UI テストが大幅に高速化される
                 UIView.setAnimationsEnabled(false)
             }
@@ -316,6 +335,17 @@ class DataController: ObservableObject {
         default:
             return false
         }
+    }
+    
+    /// Core Data 識別子URL オブジェクトに変換してオブジェクトを検索できるようにする
+    /// その URL を使用して、オブジェクトのコア データ識別子を検索
+    func issue(with uniqueIdentifier: String) -> Issue? {
+        guard let url = URL(string: uniqueIdentifier) else { return nil }
+
+        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
+            return nil
+        }
+        return try? container.viewContext.existingObject(with: id) as? Issue
     }
     
     

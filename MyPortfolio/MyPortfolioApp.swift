@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreSpotlight
+
 
 @main
 struct MyPortfolioApp: App {
@@ -30,6 +32,17 @@ struct MyPortfolioApp: App {
                     dataController.save()
                 }
             }
+            .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
         }
+    }
+    
+    /// Core Spotlight キーを探す
+    /// キーが存在し、その値が文字列であれば、それを使用
+    func loadSpotlightItem(_ userActivity: NSUserActivity) {
+        if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+            dataController.selectedIssue = dataController.issue(with: uniqueIdentifier)
+            dataController.selectedFilter = .all
+        }
+        
     }
 }
