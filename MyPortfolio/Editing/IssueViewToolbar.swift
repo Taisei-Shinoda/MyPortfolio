@@ -25,6 +25,9 @@ struct IssueViewToolbar: View {
             Button {
                 issue.completed.toggle()
                 dataController.save()
+                if issue.completed {
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                }
             } label: {
                 Label(openCloseButtonText, systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
