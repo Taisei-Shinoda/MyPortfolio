@@ -50,6 +50,12 @@ extension Issue {
         }
     }
     
+    /// リマインダー用のCoreDataプロパティをラップするための計算値を追加
+    var issueReminderTime: Date {
+        get { reminderTime ?? .now }
+        set { reminderTime = newValue }
+    }
+    
     /// プレビュー用
     static var example: Issue {
         let controller = DataController(inMemory: true)

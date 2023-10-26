@@ -49,6 +49,19 @@ struct IssueView: View {
                     )
                 }
             }
+            
+            /// リマンダーの追加
+            Section("Reminders") {
+                Toggle("Show reminders", isOn: $issue.reminderEnabled.animation())
+
+                if issue.reminderEnabled {
+                   DatePicker(
+                       "Reminder time",
+                       selection: $issue.issueReminderTime,
+                       displayedComponents: .hourAndMinute
+                   )
+                }
+            }
         }
         .disabled(issue.isDeleted)
         .onChange(of: issue) { _ in
@@ -61,6 +74,8 @@ struct IssueView: View {
         .toolbar {
             IssueViewToolbar(issue: issue)
         }
+        
+        
     }
 }
 

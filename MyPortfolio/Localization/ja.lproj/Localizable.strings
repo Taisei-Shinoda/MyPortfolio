@@ -67,6 +67,11 @@
 /* NOISSUEVIEW */
 "No Issue Selected" = "課題が選択されていない";
 
+/* REMINDERS */
+"Reminders" = "リマインダー";
+"Show reminders" = "リマンダーを設定";
+"Reminder time" = "リマインドの時刻";
+
 /* ISSUEVIEW */
 "Copy Issue Title" = "コピー";
 "Close Issue" = "閉じる";

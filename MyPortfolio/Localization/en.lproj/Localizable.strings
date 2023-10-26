@@ -67,6 +67,13 @@
 /* NOISSUEVIEW */
 "No Issue Selected" = "No Issue Selected";
 
+
+/* REMINDERS */
+"Reminders" = "Reminders";
+"Show reminders" = "Show reminders";
+"Reminder time" = "Reminder time";
+
+
 /* ISSUEVIEW */
 "Copy Issue Title" = "Copy Issue Title";
 "Close Issue" = "Close Issue";
