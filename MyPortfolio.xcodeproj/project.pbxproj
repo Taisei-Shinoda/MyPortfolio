@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C626E0902A93A3D100E1C28A /* MyPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C626E08F2A93A3D100E1C28A /* MyPortfolioUITests.swift */; };
 		C626E0922A93A3D100E1C28A /* MyPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C626E0912A93A3D100E1C28A /* MyPortfolioUITestsLaunchTests.swift */; };
+		C642C90A2AEBB7B10064484D /* DataController-Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642C9092AEBB7B10064484D /* DataController-Notifications.swift */; };
 		C662C9022A65266100D48EFE /* MyPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9012A65266100D48EFE /* MyPortfolioApp.swift */; };
 		C662C9042A65266100D48EFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662C9032A65266100D48EFE /* ContentView.swift */; };
 		C662C9062A65266200D48EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C662C9052A65266200D48EFE /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		C626E08D2A93A3D000E1C28A /* MyPortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C626E08F2A93A3D100E1C28A /* MyPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITests.swift; sourceTree = "<group>"; };
 		C626E0912A93A3D100E1C28A /* MyPortfolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C642C9092AEBB7B10064484D /* DataController-Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Notifications.swift"; sourceTree = "<group>"; };
 		C662C8FE2A65266100D48EFE /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C662C9012A65266100D48EFE /* MyPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioApp.swift; sourceTree = "<group>"; };
 		C662C9032A65266100D48EFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C662C9442A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift */,
 				C662C9462A67C15700D48EFE /* Tag-CoreDataHelpers.swift */,
 				C662C9512A69720000D48EFE /* Bundle-Decodable.swift */,
+				C642C9092AEBB7B10064484D /* DataController-Notifications.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				C6DC5C8F2A6C0DBD00512469 /* IssueViewToolbar.swift in Sources */,
 				C6DC5C952A6C11E300512469 /* SmartFilterRow.swift in Sources */,
 				C662C9602A69778E00D48EFE /* AwardsView.swift in Sources */,
+				C642C90A2AEBB7B10064484D /* DataController-Notifications.swift in Sources */,
 				C662C9472A67C15700D48EFE /* Tag-CoreDataHelpers.swift in Sources */,
 				C662C9122A65293100D48EFE /* Main.xcdatamodeld in Sources */,
 				C662C9452A67BFFC00D48EFE /* Issue-CoreDataHelpers.swift in Sources */,
