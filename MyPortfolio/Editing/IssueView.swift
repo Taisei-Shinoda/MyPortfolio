@@ -10,6 +10,12 @@ import SwiftUI
 struct IssueView: View {
     @ObservedObject var issue: Issue
     @EnvironmentObject var dataController: DataController
+    
+    /// リマインダーを設定しようとして失敗した場合の為のトラッキングプロパティ
+    @State private var showingNotificationsError = false
+    /// 通知の設定に失敗した時、ユーザーをアプリの設定にリンクさせ、そこで通知設定を確認して修正できるようにする
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
         Form {
             Section {
@@ -74,8 +80,29 @@ struct IssueView: View {
         .toolbar {
             IssueViewToolbar(issue: issue)
         }
+        .alert("おっと！", isPresented: $showingNotificationsError) {
+            Button("設定を確認", action: showAppSettings)
+            Button("キャンセル", role: .cancel) { }
+        } message: {
+            Text("通知の設定に問題がありました。通知が有効になっているか確認してください。")
+        }
+        .onChange(of: issue.reminderEnabled) { _ in updateReminder() }
+        .onChange(of: issue.reminderTime) { _ in updateReminder() }
         
         
+    }
+    
+    /// 通知設定へのアクセス許可へのスタブ
+    func showAppSettings() {
+        /// openNotificationSettingsURLString は設定へのディープリンクに使用するURL文字列
+        guard let settingsURL = URL(string: UIApplication.openNotificationSettingsURLString) else {
+            return
+        }
+        openURL(settingsURL)
+    }
+    
+    /// 🚨IssueオブジェクトのreminderEnabledの値が更新された時、トラッキングプロパティを更新
+    func updateReminder() {
     }
 }
 
