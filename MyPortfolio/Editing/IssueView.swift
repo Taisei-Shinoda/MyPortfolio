@@ -103,6 +103,14 @@ struct IssueView: View {
     
     /// 🚨IssueオブジェクトのreminderEnabledの値が更新された時、トラッキングプロパティを更新
     func updateReminder() {
+        dataController.removeReminders(for: issue)
+
+        
+        Task {
+            
+        }
+        
+        
     }
 }
 
