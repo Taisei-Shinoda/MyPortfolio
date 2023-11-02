@@ -101,16 +101,22 @@ struct IssueView: View {
         openURL(settingsURL)
     }
     
-    /// 🚨IssueオブジェクトのreminderEnabledの値が更新された時、トラッキングプロパティを更新
+    /// IssueオブジェクトのreminderEnabledの値が更新された時、トラッキングプロパティを更新
+    /// 処理が完了しなくてもUIの更新を止めない様にMainActorマークを明示的にマーク
+    /// ┗ これは同期コンテキスト内（同期関数内）で非同期処理をメインスレッドに作業をプッシュして、実行ループを待てるようにするため
     func updateReminder() {
         dataController.removeReminders(for: issue)
+        /// 同期関数（.onChange)から非同期関数を呼び出せるようTaskでラップ
+        Task { @MainActor in
+            if issue.reminderEnabled {
+                let success = await dataController.addReminder(for: issue)
 
-        
-        Task {
-            
+                if success == false {
+                    issue.reminderEnabled = false
+                    showingNotificationsError = true
+                }
+            }
         }
-        
-        
     }
 }
 
