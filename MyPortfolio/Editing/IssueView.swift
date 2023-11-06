@@ -80,11 +80,11 @@ struct IssueView: View {
         .toolbar {
             IssueViewToolbar(issue: issue)
         }
-        .alert("おっと！", isPresented: $showingNotificationsError) {
-            Button("設定を確認", action: showAppSettings)
-            Button("キャンセル", role: .cancel) { }
+        .alert("Oops!", isPresented: $showingNotificationsError) {
+            Button("Check Your Settings", action: showAppSettings)
+            Button("Cancel", role: .cancel) { }
         } message: {
-            Text("通知の設定に問題がありました。通知が有効になっているか確認してください。")
+            Text("There was a problem with your notification settings. Please check to see if notifications are enabled.")
         }
         .onChange(of: issue.reminderEnabled) { _ in updateReminder() }
         .onChange(of: issue.reminderTime) { _ in updateReminder() }

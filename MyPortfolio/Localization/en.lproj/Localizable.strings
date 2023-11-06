@@ -78,6 +78,10 @@
 "Copy Issue Title" = "Copy Issue Title";
 "Close Issue" = "Close Issue";
 "Re-open Issue" = "Re-open Issue";
+"Oops!" = "Oops!";
+"Check Your Settings" = "Check Your Settings";
+"Cancel" = "Cancel";
+"There was a problem with your notification settings. Please check to see if notifications are enabled." = "There was a problem with your notification settings. Please check to see if notifications are enabled.";
 
 /* Fields that let the users enter details about a specific issue */
 "Enter the issue title here" = "Enter the issue title here";

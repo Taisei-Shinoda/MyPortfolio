@@ -77,6 +77,13 @@
 "Close Issue" = "閉じる";
 "Re-open Issue" = "再度開く";
 
+"Oops!" = "おっと！";
+"Check Your Settings" = "設定を確認";
+"Cancel" = "キャンセル";
+"There was a problem with your notification settings. Please check to see if notifications are enabled." = "通知設定に問題がありました。通知が有効になっているか確認してください。";
+
+
+
 /* Fields that let the users enter details about a specific issue */
 "Enter the issue title here" = "課題のタイトルを追加";
 "**Modified:** %@" = "**変更日:** %@";
