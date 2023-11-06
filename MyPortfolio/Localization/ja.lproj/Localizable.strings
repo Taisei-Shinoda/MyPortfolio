@@ -79,8 +79,8 @@
 
 /* Fields that let the users enter details about a specific issue */
 "Enter the issue title here" = "課題のタイトルを追加";
-"**Modified:** %@" = "**Modified:** %@";
-"**Status:** %@" = "**Status:** %@";
+"**Modified:** %@" = "**変更日:** %@";
+"**Status:** %@" = "**状態:** %@";
 "Priority" = "優先度";
 "Add Tags" = "タグを追加";
 "Basic Information" = "基本情報";
