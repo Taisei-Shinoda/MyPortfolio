@@ -189,7 +189,7 @@ class DataController: ObservableObject {
             for issueCounter in 1...10 {
                 let issue = Issue(context: viewContext)
                 issue.title = "Issue \(tagCounter)-\(issueCounter)"
-                issue.content = "説明文"
+//                issue.content = "説明文"
                 issue.creationDate = .now
                 issue.completed = Bool.random()
                 issue.priority = Int16.random(in: 0...2)

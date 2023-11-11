@@ -16,7 +16,7 @@
 
 
 /* SIDEBARVIEW */
-"Filters" = "フィルター";
+"My Portfolio" = "My Portfolio";
 "Smart Filters" = "スマートフィルター";
 "All Issues" = "全ての課題";
 "Recent Issues" = "最近の課題";
@@ -91,8 +91,9 @@
 "Priority" = "優先度";
 "Add Tags" = "タグを追加";
 "Basic Information" = "基本情報";
-"Enter the issue description here" = "課題の詳細を入力";
-
+"Enter the issue description here" = "課題の説明を入力";
+"Hypothesis" = "仮説";
+"Enter your hypothesis" = "仮説を入力";
 
 
 /* AWARDS VIEW */

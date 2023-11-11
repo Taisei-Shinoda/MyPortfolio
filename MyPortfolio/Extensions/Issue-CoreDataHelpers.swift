@@ -18,6 +18,11 @@ extension Issue {
         get { content ?? "" }
         set { content = newValue }
     }
+    
+    var issueHypothesis: String {
+        get { hypothesis ?? "" }
+        set { hypothesis = newValue }
+    }
 
     var issueCreationDate: Date {
         creationDate ?? .now

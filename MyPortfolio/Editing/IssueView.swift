@@ -47,10 +47,23 @@ struct IssueView: View {
                         .font(.title2)
                         .foregroundStyle(.secondary)
                     
-                    TextField(
-                        "Description",
+                    TextField("Description",
                         text: $issue.issueContent,
                         prompt: Text("Enter the issue description here"),
+                        axis: .vertical
+                    )
+                }
+            }
+            
+            Section {
+                VStack(alignment: .leading) {
+                    Text("Hypothesis")
+                        .font(.title2)
+                        .foregroundStyle(.secondary)
+                    
+                    TextField("Description",
+                              text: $issue.issueHypothesis,
+                        prompt: Text("Enter your hypothesis"),
                         axis: .vertical
                     )
                 }
