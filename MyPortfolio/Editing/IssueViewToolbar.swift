@@ -83,7 +83,6 @@ struct IssueViewToolbar: View {
             try player?.start(atTime: 0)
             
         } catch {
-            // playing haptics didn't work, but that's okay
         }
     }
 }
