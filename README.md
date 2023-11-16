@@ -14,6 +14,9 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 - UserNotifications
 - XCTest
 
+## デザインパターン
+- MVVM
+
 ## 利用方法
 ### 基本的な操作
 #### 

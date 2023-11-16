@@ -39,8 +39,8 @@
 "Sort By" = "並び順"; /* Adjust the order issues are shown */
 "Date Created" = "作成日"; /* Sort issues by the date they were created */
 "Date Modified" = "変更日"; /* Sort issues by the date they were last changed */
-"Newest to Oldest" = "新規"; /* Place newer issues before older issues */
-"Oldest to Newest" = "古い"; /* Place older issues before newer issues */
+"Newest to Oldest" = "古い"; /* Place newer issues before older issues */
+"Oldest to Newest" = "新規"; /* Place older issues before newer issues */
 
 "All" = "全て";
 "Open" = "開く";
