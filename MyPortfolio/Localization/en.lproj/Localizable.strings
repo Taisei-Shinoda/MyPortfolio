@@ -34,13 +34,13 @@
 
 /* A button that shows a menu with the following options */
 "Filter" = "Filter";
-"Turn Filter On" = "Turn Filter On"; /* Enables filtering */
-"Turn Filter Off" = "Turn Filter Off"; /* Disables filtering */
-"Sort By" = "Sort By"; /* Adjust the order issues are shown */
-"Date Created" = "Date Created"; /* Sort issues by the date they were created */
-"Date Modified" = "Date Modified"; /* Sort issues by the date they were last changed */
-"Newest to Oldest" = "Newest to Oldest"; /* Place newer issues before older issues */
-"Oldest to Newest" = "Oldest to Newest"; /* Place older issues before newer issues */
+"Turn Filter On" = "Turn Filter On";
+"Turn Filter Off" = "Turn Filter Off";
+"Sort By" = "Sort By";
+"Date Created" = "Date Created";
+"Date Modified" = "Date Modified";
+"Newest to Oldest" = "Newest to Oldest";
+"Oldest to Newest" = "Oldest to Newest";
 
 "All" = "All";
 "Open" = "Open";
@@ -93,16 +93,13 @@
 "Enter the issue description here" = "Enter the issue description here";
 
 
-
 /* AWARDS VIEW */
 "Awards" = "Awards";
-
 
 
 /* DATA */
 "New tag" = "New tag";
 "New issue" = "New issue";
-
 
 
 /* DEBUG ONLY */

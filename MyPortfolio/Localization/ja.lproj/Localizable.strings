@@ -32,15 +32,15 @@
 /* CONTENTVIEW */
 "Issues" = "課題";
 
-/* A button that shows a menu with the following options */
+/* オプションを持つメニューを表示するボタン。 */
 "Filter" = "フィルター";
-"Turn Filter On" = "フィルター オン"; /* Enables filtering */
-"Turn Filter Off" = "フィルター オフ"; /* Disables filtering */
-"Sort By" = "並び順"; /* Adjust the order issues are shown */
-"Date Created" = "作成日"; /* Sort issues by the date they were created */
-"Date Modified" = "変更日"; /* Sort issues by the date they were last changed */
-"Newest to Oldest" = "古い"; /* Place newer issues before older issues */
-"Oldest to Newest" = "新規"; /* Place older issues before newer issues */
+"Turn Filter On" = "フィルター オン";
+"Turn Filter Off" = "フィルター オフ";
+"Sort By" = "並び順";
+"Date Created" = "作成日";
+"Date Modified" = "変更日";
+"Newest to Oldest" = "古い";
+"Oldest to Newest" = "新規";
 
 "All" = "全て";
 "Open" = "開く";
@@ -53,10 +53,10 @@
 /* Create a new issue */
 "New Issue" = "新しい課題";
 
-/* A text placeholder, to help users search */
+/* 検索欄におけるプレースホルダー */
 "Filter issues, or type # to add tags" = "タグを追加するには # を入力";
 
-/* Shown as a status for closed issues */
+/* クローズされた課題のステータス */
 "CLOSED" = "閉じる";
 
 
