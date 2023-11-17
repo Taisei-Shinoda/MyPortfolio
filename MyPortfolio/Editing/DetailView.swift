@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct DetailView: View {
     @EnvironmentObject var dataController: DataController
     var body: some View {
