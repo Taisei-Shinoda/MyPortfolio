@@ -32,19 +32,19 @@
 /* CONTENTVIEW */
 "Issues" = "課題";
 
-/* オプションを持つメニューを表示するボタン。 */
+/* オプションを持つメニューを表示 */
 "Filter" = "フィルター";
 "Turn Filter On" = "フィルター オン";
 "Turn Filter Off" = "フィルター オフ";
 "Sort By" = "並び順";
 "Date Created" = "作成日";
 "Date Modified" = "変更日";
-"Newest to Oldest" = "古い";
-"Oldest to Newest" = "新規";
+"Newest to Oldest" = "新規";
+"Oldest to Newest" = "古い";
 
 "All" = "全て";
-"Open" = "開く";
-"Closed" = "閉じる";
+"Unresolved" = "未解決";
+"Fix" = "解決";
 
 "Low" = "低";
 "Medium" = "中";
@@ -53,10 +53,10 @@
 /* Create a new issue */
 "New Issue" = "新しい課題";
 
-/* 検索欄におけるプレースホルダー */
+/* テキストプレースホルダー */
 "Filter issues, or type # to add tags" = "タグを追加するには # を入力";
 
-/* クローズされた課題のステータス */
+/* クローズされた課題のステータス*/
 "CLOSED" = "閉じる";
 
 
@@ -73,9 +73,9 @@
 "Reminder time" = "リマインドの時刻";
 
 /* ISSUEVIEW */
-"Copy Issue Title" = "コピー";
-"Close Issue" = "閉じる";
-"Re-open Issue" = "再度開く";
+"Copy Issue Title" = "課題のタイトルをコピー";
+"Close Issue" = "解決";
+"Re-open Issue" = "未解決";
 
 "Oops!" = "おっと！";
 "Check Your Settings" = "設定を確認";
@@ -84,7 +84,7 @@
 
 
 
-/* Fields that let the users enter details about a specific issue */
+/* 課題詳細を入力するフィールド */
 "Enter the issue title here" = "課題のタイトルを追加";
 "**Modified:** %@" = "**変更日:** %@";
 "**Status:** %@" = "**状態:** %@";

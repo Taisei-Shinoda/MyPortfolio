@@ -17,7 +17,9 @@ enum SortType: String {
 }
 
 enum Status {
-    case all, open, closed
+    case all
+    case open
+    case closed
 }
 
 
@@ -127,7 +129,7 @@ class DataController: ObservableObject {
             /// Spotlight でのトラッキングを可能にする
             if let description = self?.container.persistentStoreDescriptions.first {
                 description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-
+                
                 if let coordinator = self?.container.persistentStoreCoordinator {
                     self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
                         forStoreWith: description,
@@ -137,18 +139,17 @@ class DataController: ObservableObject {
                     self?.spotlightDelegate?.startSpotlightIndexing()
                 }
             }
-
             
             /// UI テスト ターゲット用のデバッグ モード
             /// if let error = エラーコードが実行され、Core Dataスタックのロードが完了した場合テストのための白紙の状態にするためのエントリポイント
             /// アプリがテスト環境にあることを認識できるようにその起動引数を認識し、既存のデータを削除してその構成に応答するコードを追加
-            #if DEBUG
+#if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
                 self?.deleteAll()
                 /// アプリのすべてのアニメーションが無効になり、UI テストが大幅に高速化される
                 UIView.setAnimationsEnabled(false)
             }
-            #endif
+#endif
             
         }
     }
@@ -189,7 +190,7 @@ class DataController: ObservableObject {
             for issueCounter in 1...10 {
                 let issue = Issue(context: viewContext)
                 issue.title = "Issue \(tagCounter)-\(issueCounter)"
-//                issue.content = "説明文"
+                //                issue.content = "説明文"
                 issue.creationDate = .now
                 issue.completed = Bool.random()
                 issue.priority = Int16.random(in: 0...2)
@@ -341,7 +342,7 @@ class DataController: ObservableObject {
     /// その URL を使用して、オブジェクトのコア データ識別子を検索
     func issue(with uniqueIdentifier: String) -> Issue? {
         guard let url = URL(string: uniqueIdentifier) else { return nil }
-
+        
         guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
             return nil
         }

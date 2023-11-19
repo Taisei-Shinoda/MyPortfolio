@@ -13,8 +13,8 @@ struct IssueViewToolbar: View {
     /// 単一のプロパティを追加することでビュー内にCHHapticEngine のインスタンスを作成
     @State private var engine = try? CHHapticEngine()
     var openCloseButtonText: LocalizedStringKey {
-        issue.completed ? "Re-open Issue" : "Close Issue"
-    }
+        issue.completed ? "Re-open Issue" : "Close Issue" }
+//    issue.completed ? "Re-open Issue" : "Close Issue" }
     
     var body: some View {
         Menu {
@@ -33,7 +33,6 @@ struct IssueViewToolbar: View {
             Section("Tags") {
                 TagsMenuView(issue: issue)
             }
-            
         } label: {
             Label("Actions", systemImage: "ellipsis.circle")
         }
@@ -83,6 +82,7 @@ struct IssueViewToolbar: View {
             try player?.start(atTime: 0)
             
         } catch {
+            // playing haptics didn't work, but that's okay
         }
     }
 }

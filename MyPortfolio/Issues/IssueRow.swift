@@ -20,6 +20,7 @@ struct IssueRow: View {
     var body: some View {
         NavigationLink(value: viewModel.issue) {
             HStack {
+                /// 優先度（priority)が高(High)だと自動的にマーキングする
                 Image(systemName: "exclamationmark.circle")
                     .imageScale(.large)
                     .opacity(viewModel.iconOpacity)

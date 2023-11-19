@@ -17,8 +17,6 @@ extension ContentView {
             self.dataController = dataController
         }
         
-        
-        
         func delete(_ offsets: IndexSet) {
             let issues = dataController.issuesForSelectedFilter()
             

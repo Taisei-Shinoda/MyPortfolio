@@ -39,9 +39,9 @@ extension Issue {
     
     var issueStatus: String {
         if completed {
-            return "Closed"
+            return "FIX"
         } else {
-            return "Open"
+            return "UNRESOLVED"
         }
     }
     

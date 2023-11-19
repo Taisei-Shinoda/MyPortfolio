@@ -9,17 +9,18 @@ import CoreData
 @testable import MyPortfolio
 import XCTest
 
+
 final class DevelopmentTests: BaseTestCase {
 
-    
+    /// サンプルコードが正しくロードされることを確認するためのテスト
     func testSampleDataCreationWorks() {
         dataController.createSampleData()
 
         XCTAssertEqual(dataController.count(for: Tag.fetchRequest()), 5, "タグ例は5個ある必要がある")
         XCTAssertEqual(dataController.count(for: Issue.fetchRequest()), 50, "Issue例は50個ある必要がある")
     }
-    
-    
+
+    /// deleteAll()メソッドが動作することを確認するテストを書く。
     func testDeleteAllClearsEverything() {
         dataController.createSampleData()
         dataController.deleteAll()
@@ -28,7 +29,7 @@ final class DevelopmentTests: BaseTestCase {
         XCTAssertEqual(dataController.count(for: Issue.fetchRequest()), 0, "0個のIssueを残す必要がある")
     }
     
-    
+    /// TagクラスとIssueクラスの両方が適切なサンプル・データを持っていることを確認するテストを作成する。
     func testExampleTagHasNoIssues() {
         let tag = Tag.example
         XCTAssertEqual(tag.issues?.count, 0, "タグ例に課題は無いはず")
@@ -39,11 +40,3 @@ final class DevelopmentTests: BaseTestCase {
         XCTAssertEqual(issue.priority, 2, "Issue例は最優先される必要がある")
     }
 }
-
-
-/*
- サンプルコードが正しくロードされることを確認するためのテストを書く。
- deleteAll()メソッドが動作することを確認するテストを書く。
- TagクラスとIssueクラスの両方が適切なサンプル・データを持っていることを確認するテストを作成する。
- 
- */
