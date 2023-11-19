@@ -14,7 +14,6 @@ struct IssueViewToolbar: View {
     @State private var engine = try? CHHapticEngine()
     var openCloseButtonText: LocalizedStringKey {
         issue.completed ? "Re-open Issue" : "Close Issue" }
-//    issue.completed ? "Re-open Issue" : "Close Issue" }
     
     var body: some View {
         Menu {

@@ -39,7 +39,7 @@ extension Issue {
     
     var issueStatus: String {
         if completed {
-            return "FIX"
+            return "FIXED"
         } else {
             return "UNRESOLVED"
         }

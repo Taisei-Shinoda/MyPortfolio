@@ -44,7 +44,7 @@ struct IssueRow: View {
                         .font(.subheadline)
 
                     if viewModel.completed {
-                        Text("CLOSED")
+                        Text("FIXED")
                             .font(.body.smallCaps())
                     }
                 }

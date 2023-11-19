@@ -39,12 +39,15 @@
 "Sort By" = "並び順";
 "Date Created" = "作成日";
 "Date Modified" = "変更日";
-"Newest to Oldest" = "新規";
-"Oldest to Newest" = "古い";
+"Newest to Oldest" = "古い";
+"Oldest to Newest" = "新規";
 
 "All" = "全て";
 "Unresolved" = "未解決";
-"Fix" = "解決";
+"Fixed" = "解決済み";
+
+"UNRESOLVED" = "未解決";
+"FIXED" = "解決済み";
 
 "Low" = "低";
 "Medium" = "中";
@@ -57,7 +60,8 @@
 "Filter issues, or type # to add tags" = "タグを追加するには # を入力";
 
 /* クローズされた課題のステータス*/
-"CLOSED" = "閉じる";
+//"CLOSED" = "閉じる";
+"FIXED" = "解決済み";
 
 
 

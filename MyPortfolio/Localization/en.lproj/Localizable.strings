@@ -57,7 +57,7 @@
 "Filter issues, or type # to add tags" = "Filter issues, or type # to add tags";
 
 /* Shown as a status for closed issues */
-"CLOSED" = "CLOSED";
+"FIXED" = "FIXED";
 
 
 
