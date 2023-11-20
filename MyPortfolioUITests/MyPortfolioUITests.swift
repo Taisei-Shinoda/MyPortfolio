@@ -42,18 +42,5 @@ final class MyPortfolioUITests: XCTestCase {
 //            app.buttons["OK"].tap()
 //        }
 //    }
-//
-//    func testCreatingAndDeletingIssues() {
-//        for tapCount in 1...5 {
-//            app.buttons["New Issue"].tap()
-//            app.buttons["Issues"].tap()
-//            XCTAssertEqual(app.cells.count, tapCount, "リストには \(tapCount) 行あるはず")
-//        }
-//
-//        for tapCount in (0...4).reversed() {
-//            app.cells.firstMatch.swipeLeft()
-//            app.buttons["Delete"].tap()
-//            XCTAssertEqual(app.cells.count, tapCount, "リストには \(tapCount) 行あるはず")
-//        }
-//    }
+    
 }
