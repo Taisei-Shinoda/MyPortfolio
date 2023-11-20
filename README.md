@@ -6,12 +6,6 @@
 iPhoneで自分の課題を追加・確認・削除していくiOSアプリです。
 <br />
 
-
-## 基本的なアプリの使い方
-![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
-<br />
-
-
 ## 機能紹介
 | TOP画面 |　新規課題作成画面|
 | ----- | ----- |
@@ -36,9 +30,14 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 <br />
 
 
-## フィルター機能について
-SwiftLint が導入されており、独自のス
+## 基本的なアプリの使い方
+![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
+<br />
 
+
+## フィルター機能について
+![フィルターの操作]([https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55](https://github.com/Taisei-Shinoda/MyPortfolio/issues/14#issue-2001596043))
+<br />
 
 
 ## タグの追加と初期化。そして受賞（スタンプ）一覧。
@@ -48,11 +47,11 @@ SwiftLint が導入されており、独自のス
 - 「+」ボタンは新しいタグを追加出来ます。
 - 「🏅（メダル）」ボタンは課題解決・編集・アクセス頻度に応じてスタンプを付与予定。（※1)
 - 「🔥」ボタンはタグを初期化します。
+<br />
 ※1： 現在、スタンプ付与のロジックは未実装
 
 
 ## 使用技術
-
 | Category          | Technology Stack                                             |
 | ----------------- | --------------------------------------------------           |
 | Language          | Swift                                                        |
@@ -62,24 +61,16 @@ SwiftLint が導入されており、独自のス
 
 <br />
 
-
-## 静的解析ツールについて
+### 静的解析ツールについて
 SwiftLint が導入されており、独自のスタイル及び検出対象を指定しました。<br />
 既に Xcode 上の Build Phases へ、自動的に SwiftLint が動作する様にスクリプトを埋め込みました。<br />
 スクリプトはGitHubのSwiftLint READMEから直接取得<br />
 <br />
 
-
 ## 改善事項・実装予定
 - Tagsの中のTag名を長押しすると、編集できるがそれが即時的にUI上に反映されない。
 - UIテストのカバレッジが30％程度だったので、段階的に上げていきます。
 - スタンプ付与のロジックを実装する。
-
-
-
-## 画面遷移図
-![画面遷移図 drawio](https://user-images.githubusercontent.com/92074465/282289040-2bcf2900-71cb-4d1c-a7e3-28464bb88712.png)
-
 
 ## 開発環境・言語
 - 開発環境
