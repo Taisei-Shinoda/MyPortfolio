@@ -16,7 +16,7 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 ## 機能一覧
 | トップ画面 |　ログイン画面 |
 | ---- | ---- |
-| ![Top画面](![1トップ画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/40712c1e-258d-4f2c-9399-3930cb471fdc)) | ![ログイン画面](/docs/img/app-view/login_1.1.png) |
+| ![Top画面](https://user-images.githubusercontent.com/92074465/284141957-e783c381-c5cc-4bf3-a8c5-ceeb48ec2c7d.png) | ![ログイン画面](/docs/img/app-view/login_1.1.png) |
 | 登録せずにサービスをお試しいただくためのトライアル機能を実装しました。 | ログインIDとパスワードでの認証機能を実装しました。 |
 
 | 事業者選択画面 |　請求書作成画面 |
