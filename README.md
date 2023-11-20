@@ -44,8 +44,6 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 | Localize          | Japan, English                                               |
 | etc.              | SwiftLint, Git, GitHub                                       |
 
-<br />
-
 ### 静的解析ツールについて
 SwiftLint が導入されており、独自のスタイル及び検出対象を指定しました。<br />
 既に Xcode 上の Build Phases へ自動的に SwiftLint が動作する様にスクリプトを埋め込みました。<br />
