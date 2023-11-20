@@ -14,10 +14,10 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 
 
 ## 機能一覧
-| トップ画面 |　2枚目 |
+| トップ画面 |　新規課題作成画面|
 | ---- | ---- |
-| ![Top画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/cce2f62f-c7ea-488c-9754-a4eed5f98825) | ![ログイン画面](/docs/img/app-view/login_1.1.png) |
-| Top画面Top画面Top画面Top画面Top画面Top画面 | 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 |
+| ![Top画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/cce2f62f-c7ea-488c-9754-a4eed5f98825) | ![新規課題作成画面](https://user-images.githubusercontent.com/92074465/284142996-73c7a09a-5539-4754-ab8c-b1616f556c26.png) |
+| Top画面Top画面Top画面Top画面Top画面Top画面 | 新規課題作成新規課題作成新規課題作成新規課題作成新規課題作成新規課題作成新規課題作成 |
 
 | タグ付け画面 |　通知許可画面 |
 | ---- | ---- |
