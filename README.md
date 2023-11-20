@@ -36,8 +36,10 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 
 
 ## フィルター機能について
-![フィルターの操作]([https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55](https://github.com/Taisei-Shinoda/MyPortfolio/issues/14#issue-2001596043)](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9))
+![フィルターの操作]((https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9))
 <br />
+
+
 
 
 ## タグの追加と初期化。そして受賞（スタンプ）一覧。
