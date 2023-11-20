@@ -1,7 +1,7 @@
 # My Portfolio
 iPhoneで自分の課題を追加・確認・削除していくiOSアプリです。
 
-![ヘッダー画像](/docs/img/header/header.png)
+![ヘッダー画像](https://user-images.githubusercontent.com/92074465/284128998-cbe612ac-ae31-472e-ba47-ac6a3db4b472.png)
 
 <br />
 
