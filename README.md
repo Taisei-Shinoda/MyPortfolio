@@ -31,9 +31,9 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 
 
 ### 基本的なアプリの使い方
-####　![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
-####　![フィルターの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9)
-####　![タグの追加と初期化の操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/f92a5ba8-457f-468f-b2a0-d11051a06b4d)
+- ![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
+- ![フィルターの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9)
+- ![タグの追加と初期化の操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/f92a5ba8-457f-468f-b2a0-d11051a06b4d)
 
 
 ## 基本的なアプリの使い方
