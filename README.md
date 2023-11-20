@@ -3,7 +3,7 @@
 
 
 # ISSUES
-iPhoneで自分の課題を追加・確認・削除していくiOSアプリです。
+iPhoneで自分の課題を追加・確認・削除していくiOSアプリです。<br />
 <br />
 
 ## 機能紹介
@@ -34,9 +34,10 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 ![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
 <br />
 
+<br />
 
 ## フィルター機能について
-![フィルターの操作]((https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9))
+![フィルターの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9)
 <br />
 
 
