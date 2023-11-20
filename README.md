@@ -14,25 +14,25 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 
 
 ## 機能一覧
-| トップ画面 |　ログイン画面 |
+| トップ画面 |　2枚目 |
 | ---- | ---- |
 | ![Top画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/cce2f62f-c7ea-488c-9754-a4eed5f98825) | ![ログイン画面](/docs/img/app-view/login_1.1.png) |
-| 登録せずにサービスをお試しいただくためのトライアル機能を実装しました。 | ログインIDとパスワードでの認証機能を実装しました。 |
+| Top画面Top画面Top画面Top画面Top画面Top画面 | 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 2枚目 |
 
-| 事業者選択画面 |　請求書作成画面 |
+| タグ付け画面 |　通知許可画面 |
 | ---- | ---- |
-| ![事業者選択画面](/docs/img/app-view/select-business_1.1.png) | ![請求書作成画面](/docs/img/app-view/create-invoice_1.1.png) |
-| 登録済みの複数の事業者の中から、請求書を作成したい事業者を選択する機能を実装しました。 | 請求書の作成機能・マスタデータの呼び出し機能・税率変更機能・税率別内訳の計算機能、合計金額の計算機能を実装しました。 |
+| ![タグ付け画面]((https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/077d8dc4-b3a2-440e-8b94-8ef8f2212484)) | ![通知許可画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/49dc2f08-1621-45af-b958-0ab103e02b71)|
+| タグ付け画面タグ付け画面タグ付け画面タグ付け画面タグ付け画面 | 通知許可画面通知許可画面通知許可画面通知許可画面通知許可画面通知許可画面 |
 
-| 請求書詳細画面 |　PDF出力画面 |
+| タグ名変更 |　解決"済み"のフィルタリング |
 | ---- | ---- |
-| ![請求書詳細画面](/docs/img/app-view/invoice-detail_1.1.png) | ![　PDF出力画面](/docs/img/app-view/print-invoice_1.1.png) |
-| 請求書データの表示機能を実装しました。 | PDFでの請求書発行機能を実装しました。 |
+| ![請求書詳細画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/237c254b-5173-464d-a693-6b2044ab5868) | ![　解決"済み"のフィルタリング](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/60af328c-aadb-4a1f-8022-ce24457b3966) |
+| タグ名変更タグ名変更タグ名変更タグ名変更タグ名変更タグ名変更タグ名変更 | 解決"済み"のフィルタリング解決済みのフィルタリング解決済みのフィルタリング|
 
-| 登録するマスタの選択画面 |　マスタの登録画面 |
+| 優先度(高)のフィルタリング画面 |　受賞画面 |
 | ---- | ---- |
-| ![請求書詳細画面](/docs/img/app-view/select-master_1.1.png) | ![　PDF出力画面](/docs/img/app-view/master-register-form_1.1.png) |
-| 事業者情報と備考欄情報のマスタ登録機能を実装しました。 | マスタ情報の登録をすることで、請求書の作成時にデータを呼び出すことができます。 |
+| ![優先度(高)のフィルタリング画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/670e8570-25ee-49e9-95a6-7eb8217b3cd6) | ![　受賞画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/6a90fa70-3aba-4b8d-8f53-52125dadffe7)|
+| 優先度(高)のフィルタリング画面優先度(高)のフィルタリング画面優先度(高)のフィルタリング画面優先度(高)のフィルタリング画面 | 受賞画面受賞画面受賞画面受賞画面受賞画面 |
 
 <br />
 
