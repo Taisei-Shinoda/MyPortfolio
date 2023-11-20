@@ -39,7 +39,7 @@ struct SidebarView: View {
             Button("Cancel", role: .cancel) { }
             TextField("New name", text: $viewModel.tagName)
         }
-        .navigationTitle("My Portfolio")
+        .navigationTitle("ISSUES")
     }
 }
 
