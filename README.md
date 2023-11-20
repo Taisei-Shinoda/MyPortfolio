@@ -14,22 +14,22 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 
 
 ## 機能紹介
-| TOP画面 |　新規課題作成画面|
+| TOP画面|　新規課題作成画面|
 | ---- | ---- |
 | ![Top画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/cce2f62f-c7ea-488c-9754-a4eed5f98825) | ![新規課題作成画面](https://user-images.githubusercontent.com/92074465/284142996-73c7a09a-5539-4754-ab8c-b1616f556c26.png) |
 | アプリを立ち上げた時のTOP画面です。 | 新しい課題を作成するときの画面です。|
 
-| タグ付け画面 |　タグ名変更画面 |
+| タグ付け画面|　タグ名変更画面 |
 | ---- | ---- |
 | ![タグ付け画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/077d8dc4-b3a2-440e-8b94-8ef8f2212484) |　![タグ名変更画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/237c254b-5173-464d-a693-6b2044ab5868) | 
 | 課題に対してタグを付与・削除したい時は編集出来ます。 | タグの名称を変えたい時に長押しで編集出来ます。 |
 
-| フィルタリング画面① |フィルタリング画面② |
+| フィルタリング画面①|フィルタリング画面② |
 | ---- | ---- |
 | ![優先度(高)のフィルタリング画面](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/670e8570-25ee-49e9-95a6-7eb8217b3cd6) | ![　解決"済み"のフィルタリング](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/60af328c-aadb-4a1f-8022-ce24457b3966) |
 | 優先度(高)でフィルタリングした時の画面です。 | 　解決"済み"の課題でフィルタリングした時の画面です。 |
 
-| 通知設定画面① |　通知設定画面② |
+| 通知設定画面①|　通知設定画面② |
 | ---- | ---- |
 | ![通知設定画面①](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/49dc2f08-1621-45af-b958-0ab103e02b71)　 | ![　通知設定画面②](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/4348efdc-8bd3-4822-b9d0-05a651e59dbd)|
 | 通知を許可していない時はアラートが出ます。 | 通知が許可されている場合の設定画面です。 |
