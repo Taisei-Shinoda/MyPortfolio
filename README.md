@@ -1,7 +1,6 @@
 ![ヘッダー画像](https://user-images.githubusercontent.com/92074465/284128998-cbe612ac-ae31-472e-ba47-ac6a3db4b472.png)
 <br />
 
-
 # ISSUES
 iPhoneで自分の課題を追加・確認・削除していくiOSアプリです。<br />
 <br />
@@ -27,9 +26,6 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 | ![通知設定画面①](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/49dc2f08-1621-45af-b958-0ab103e02b71)　 | ![　通知設定画面②](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/4348efdc-8bd3-4822-b9d0-05a651e59dbd) |
 | 通知を許可していない時はアラートが出ます。「設定を確認」を押すと直接iOSの設定画面に遷移します。| 通知が許可されている場合の設定画面です。課題を忘れたくない時に活用出来ます。|
 
-<br />
-
-
 ### 基本的なアプリの使い方
 - ![アプリの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/b3e0951b-dfd7-4e57-89a3-64c6a8c04e55)
 - ![フィルターの操作](https://github.com/Taisei-Shinoda/MyPortfolio/assets/92074465/58bce4c1-26aa-450a-a6f5-b0444658acf9)
@@ -50,10 +46,13 @@ SwiftLint が導入されており、独自のスタイル及び検出対象を�
 スクリプトはGitHubのSwiftLint READMEから直接取得<br />
 <br />
 
+
 ## 改善事項・実装予定
 - Tagsの中のTag名を長押しすると、編集できるがそれが即時的にUI上に反映されないので確認中です。
 - UIテストのカバレッジが30％程度だったので、段階的に上げていきます。
 - 「🏅（メダル）」ボタンは課題解決・編集・アクセス頻度に応じてスタンプを付与予定です。
+
+
 
 ## 開発環境・言語
 - 開発環境
