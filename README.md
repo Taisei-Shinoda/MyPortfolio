@@ -38,7 +38,7 @@ iPhoneで自分の課題を追加・確認・削除していくiOSアプリで�
 | Language          | Swift                                                        |
 | Frameworks        | SwiftUI, CoreData, CoreSpotlight, UserNotifications, XCTest  | 
 | Design Pattern    | MVVM                                                         |
-| Localize          | Japan, English                                               |
+| Localize          | Japanese, English                                               |
 | etc.              | SwiftLint, Git, GitHub                                       |
 
 ### 静的解析ツールについて
