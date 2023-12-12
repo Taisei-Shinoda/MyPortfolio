@@ -311,12 +311,24 @@ class DataController: ObservableObject {
         save()
         selectedIssue = issue
     }
-    
-    func newTag() {
+
+    func newTag() -> Bool {
+        var shouldCreate = fullVersionUnlocked
+
+        if shouldCreate == false {
+            // 現在のタグの数をチェック（ユーザーが無料でタグを 3 つまで作成できるように制限）
+            shouldCreate = count(for: Tag.fetchRequest()) < 3
+        }
+
+        guard shouldCreate else {
+            return false
+        }
+        
         let tag = Tag(context: container.viewContext)
         tag.id = UUID()
         tag.name = NSLocalizedString("New tag", comment: "Create a new tag")
         save()
+        return true
     }
     
     

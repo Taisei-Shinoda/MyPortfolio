@@ -106,6 +106,9 @@
 "Locked" = "ロック";
 
 
+/* STORE VIEW */
+"Buy Now" = "購入";
+
 
 /* DATA */
 "New tag" = "新しいタグ";
