@@ -36,5 +36,38 @@ extension DataController {
             await transaction.finish()
         }
     }
+    
+    // 既存のエンタイトルメントに関する処理
+    func monitorTransactions() async {
+        /// 過去の購入履歴を確認する
+        for await entitlement in Transaction.currentEntitlements {
+            if case let .verified(transaction) = entitlement {
+                await finalize(transaction)
+            }
+        }
+
+        /// 今後の取引に注目
+        for await update in Transaction.updates {
+            if let transaction = try? update.payloadValue {
+                await finalize(transaction)
+            }
+        }
+    }
+    
+    // 購入フロー全体をトリガーする処理
+    func purchase(_ product: Product) async throws {
+        let result = try await product.purchase()
+
+        // 製品の購入が成功した場合、トランザクションを読み取って処理
+        if case let .success(validation) = result {
+            try await finalize(validation.payloadValue)
+        }
+    }
+    
+    
+    
+    
+    
+    
 
 }

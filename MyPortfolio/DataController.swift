@@ -85,22 +85,28 @@ class DataController: ObservableObject {
     /// アプリ内課金におけるユーザー データを保存する UserDefaults スイート
     let defaults: UserDefaults
     
+    /// アプリが起動したらすぐにmonitorTransactions()を呼び出すタスクを作成するので、情報を保存する為のスイート
+    private var storeTask: Task<Void, Never>?
+    
     
     /// データコントローラーを初期化する
     /// - Parameter inMemory: データを一時メモリに保存するかどうか
     /// - Parameter defaults: ユーザーデータを保存するUserDefaultsスイート
     init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
         
-        //        container = NSPersistentCloudKitContainer(name: "Main")
-        /// Core Data がエンティティを登録する際の競合を防ぐため [2]
+        /// Core Data がエンティティを登録する際の競合を防ぐため
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
+        
+        /// アプリが起動したらすぐにmonitorTransactions()を呼び出す
+        storeTask = Task { await monitorTransactions() }
+        
         
         // テストとプレビューの目的で、/dev/null に書き込むことによる一時的なメモリ内データベース
         // アプリの実行終了後にデータは破棄される
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
         }
-        self.defaults = defaults
         
         /// ユーザーがアプリを再起動するのを待つのではなく、変更があったときにUIを即座に更新させる。
         /// 1. 永続ストアに発生した変更をビューコンテキストに自動的に適用し、2つの同期を維持する。

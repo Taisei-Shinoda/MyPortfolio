@@ -32,6 +32,7 @@
 		C67FD4A82AE3B7E900F31A0E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FD4A72AE3B7E900F31A0E /* ContentViewModel.swift */; };
 		C67FD4AA2AE3BA2900F31A0E /* IssueRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FD4A92AE3BA2900F31A0E /* IssueRowViewModel.swift */; };
 		C6D218832B26AA2D007E72CD /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D218822B26AA2D007E72CD /* DataController-StoreKit.swift */; };
+		C6D218882B27F65A007E72CD /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D218872B27F65A007E72CD /* StoreView.swift */; };
 		C6DC5C7D2A6BB9C500512469 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C7F2A6BB9C500512469 /* Localizable.strings */; };
 		C6DC5C822A6BBA8F00512469 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C842A6BBA8F00512469 /* Localizable.stringsdict */; };
 		C6DC5C862A6BC0F700512469 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = C6DC5C882A6BC0F700512469 /* Awards.json */; };
@@ -98,6 +99,7 @@
 		C67FD4A92AE3BA2900F31A0E /* IssueRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRowViewModel.swift; sourceTree = "<group>"; };
 		C6D218812B26A58D007E72CD /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		C6D218822B26AA2D007E72CD /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
+		C6D218872B27F65A007E72CD /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		C6DC5C7E2A6BB9C500512469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DC5C812A6BB9ED00512469 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DC5C832A6BBA8F00512469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		C662C9002A65266100D48EFE /* MyPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				C6D218842B27F620007E72CD /* Store */,
 				C662C9012A65266100D48EFE /* MyPortfolioApp.swift */,
 				C662C9132A6572C800D48EFE /* DataController.swift */,
 				C6D218822B26AA2D007E72CD /* DataController-StoreKit.swift */,
@@ -212,6 +215,14 @@
 				C642C9092AEBB7B10064484D /* DataController-Notifications.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C6D218842B27F620007E72CD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C6D218872B27F65A007E72CD /* StoreView.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		C6DC5C9B2A6D1D3400512469 /* Configuration */ = {
@@ -487,6 +498,7 @@
 				C662C94E2A67D9E600D48EFE /* NoIssueView.swift in Sources */,
 				C662C9492A67C94900D48EFE /* IssueRow.swift in Sources */,
 				C662C9022A65266100D48EFE /* MyPortfolioApp.swift in Sources */,
+				C6D218882B27F65A007E72CD /* StoreView.swift in Sources */,
 				C67FD4AA2AE3BA2900F31A0E /* IssueRowViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
