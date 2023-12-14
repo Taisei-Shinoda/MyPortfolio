@@ -358,6 +358,9 @@ class DataController: ObservableObject {
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
             
+        case "unlock":
+            return fullVersionUnlocked
+            
         default:
             return false
         }
