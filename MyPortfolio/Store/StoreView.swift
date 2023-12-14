@@ -43,6 +43,8 @@ struct StoreView: View {
                             }
                         }
                         
+                        Button("Restore Purchases", action: restore)
+                        
                     case .error:
                         Text("Sorry, there was an error loading our store.")
                         Button("Try Again") {
@@ -94,6 +96,11 @@ struct StoreView: View {
         }
     }
     
+    func restore() {
+        Task {
+            try await AppStore.sync()
+        }
+    }
 }
 
 struct StoreView_Previews: PreviewProvider {
