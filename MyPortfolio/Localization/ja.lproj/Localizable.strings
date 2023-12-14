@@ -108,6 +108,9 @@
 
 /* STORE VIEW */
 "Buy Now" = "購入";
+"Loading..." = "ロード中";
+"Sorry, there was an error loading our store." = "申し訳ございません。ストアの読み込みにエラーが発生しました。";
+"Try Again" = "もう一度";
 
 
 /* DATA */

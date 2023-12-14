@@ -8,6 +8,7 @@
 
 import CoreData
 import Foundation
+import StoreKit
 import SwiftUI
 
 
@@ -58,6 +59,8 @@ class DataController: ObservableObject {
     @Published var sortType = SortType.dateCreated
     
     @Published var sortNewestFirst = true
+    /// StoreKitで読み込んだ商品
+    @Published var products = [Product]()
     
     var suggestedFilterTokens: [Tag] {
         guard filterText.starts(with: "#") else {
@@ -370,7 +373,4 @@ class DataController: ObservableObject {
         }
         return try? container.viewContext.existingObject(with: id) as? Issue
     }
-    
-    
-    
 }

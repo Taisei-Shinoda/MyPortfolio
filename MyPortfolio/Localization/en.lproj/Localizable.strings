@@ -100,7 +100,9 @@
 
 /* STORE VIEW */
 "Buy Now" = "Buy Now";
-
+"Loading..." = "Loading...";
+"Sorry, there was an error loading our store." = "Sorry, there was an error loading our store.";
+"Try Again" = "Try Again";
 
 /* DATA */
 "New tag" = "New tag";

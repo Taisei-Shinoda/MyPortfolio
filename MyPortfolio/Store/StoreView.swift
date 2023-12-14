@@ -10,21 +10,48 @@ import SwiftUI
 
 
 struct StoreView: View {
-    @EnvironmentObject var dataController: DataController
-    @Environment(\.dismiss) var dismiss
+    /// ストアにおける状態遷移を切り替え
+    enum LoadState {
+        case loading, loaded, error
+    }
     /// アプリで購入できる商品の配列
     @State private var products = [Product]()
+    @State private var loadState = LoadState.loading
+    @EnvironmentObject var dataController: DataController
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
-            if let product = products.first {
-                VStack(alignment: .leading) {
-                    Text(product.displayName)
-                        .font(.title)
-                    Text(product.description)
+            ScrollView {
+                VStack {
+                    switch loadState {
+                    case .loading:
+                        Text("Loading...")
+                            .font(.headline)
+                        ProgressView()
+                        
+                    case .loaded:
+                        ForEach(dataController.products) { product in
+                            VStack(alignment: .leading) {
+                                Text(product.displayName)
+                                    .font(.title)
+                                Text(product.description)
 
-                    Button("Buy Now") {
-                        purchase(product)
+                                Button("Buy Now") {
+                                    purchase(product)
+                                }
+                            }
+                        }
+                        
+                    case .error:
+                        Text("Sorry, there was an error loading our store.")
+                        Button("Try Again") {
+                            Task {
+                                await load()
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+ 
                     }
                 }
             }
@@ -52,10 +79,18 @@ struct StoreView: View {
     
     /// すべての商品をロードするメソッド
     func load() async {
+        loadState = .loading
+
         do {
-            products = try await Product.products(for: [DataController.unlockPremiumProductID])
+            try await dataController.loadProducts()
+
+            if dataController.products.isEmpty {
+                loadState = .error
+            } else {
+                loadState = .loaded
+            }
         } catch {
-            print("読み込みエラー: \(error.localizedDescription)")
+            loadState = .error
         }
     }
     
