@@ -14,6 +14,8 @@ struct StoreView: View {
     enum LoadState {
         case loading, loaded, error
     }
+    /// アプリ内課金が可能かどうかのスイッチ
+    @State private var showingPurchaseError = false
     /// アプリで購入できる商品の配列
     @State private var products = [Product]()
     @State private var loadState = LoadState.loading
@@ -63,6 +65,12 @@ struct StoreView: View {
         }
         /// このload()はStoreViewが表示されるとすぐに呼び出される必要がある
         .task { await load() }
+        .alert("In-app purchases are disabled", isPresented: $showingPurchaseError) {
+        } message: {
+            Text("""
+            You can't purchase the premium unlock because in-app purchases are disabled on this device.Please ask whomever manages your device for assistance.
+            """)
+        }
     }
     /// すべての商品をロードするメソッド
     func checkForPurchase() {
@@ -74,8 +82,14 @@ struct StoreView: View {
     /// 商品ボタンから呼び出される購入操作をトリガーするメソッド
     /// 非同期で実行できるようにする為、バックグラウンドタスクでラップするというステップを踏む
     func purchase(_ product: Product) {
+        /// アプリ内課金が可能かどうかを確認する処理
+        guard AppStore.canMakePayments else {
+            showingPurchaseError.toggle()
+            return
+        }
         Task { @MainActor in
             try await dataController.purchase(product)
+            
         }
     }
     

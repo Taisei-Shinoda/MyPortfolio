@@ -111,6 +111,8 @@
 "Loading..." = "ロード中";
 "Sorry, there was an error loading our store." = "申し訳ございません。ストアの読み込みにエラーが発生しました。";
 "Try Again" = "もう一度";
+"In-app purchases are disabled" = "アプリ内課金は無効です";
+"You can't purchase the premium unlock because in-app purchases are disabled on this device.Please ask whomever manages your device for assistance." = "このデバイスではアプリ内購入が無効になっているため、ロック解除を購入できません。デバイスを管理している人にサポートを求めてください。";
 
 
 /* DATA */
