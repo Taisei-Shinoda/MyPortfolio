@@ -24,40 +24,71 @@ struct StoreView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack(spacing: 0) {
+                // ヘッダー
                 VStack {
-                    switch loadState {
-                    case .loading:
-                        Text("Loading...")
-                            .font(.headline)
-                        ProgressView()
-                        
-                    case .loaded:
-                        ForEach(dataController.products) { product in
-                            VStack(alignment: .leading) {
-                                Text(product.displayName)
-                                    .font(.title)
-                                Text(product.description)
-
-                                Button("Buy Now") {
-                                    purchase(product)
+                    Image(decorative: "unlock")
+                        .resizable()
+                        .scaledToFit()
+                        .rotationEffect(.degrees(90))
+                    
+                    Text("Upgrade Today!")
+                        .font(.title.bold())
+                        .fontDesign(.rounded)
+                        .foregroundStyle(.white)
+                    
+                    Text("Get the most out of the app")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(20)
+                .background(.blue.gradient)
+                
+                
+                ScrollView {
+                    VStack {
+                        switch loadState {
+                        case .loading:
+                            Text("Loading...")
+                                .font(.headline)
+                            ProgressView()
+                            
+                        case .loaded:
+                            ForEach(dataController.products) { product in
+                                VStack(alignment: .leading) {
+                                    Text(product.displayName)
+                                        .font(.title)
+                                    Text(product.description)
+                                    
+                                    Button("Buy Now") {
+                                        purchase(product)
+                                    }
                                 }
                             }
-                        }
-                        
-                        Button("Restore Purchases", action: restore)
-                        
-                    case .error:
-                        Text("Sorry, there was an error loading our store.")
-                        Button("Try Again") {
-                            Task {
-                                await load()
+                            
+                            
+                        case .error:
+                            Text("Sorry, there was an error loading our store.")
+                            Button("Try Again") {
+                                Task {
+                                    await load()
+                                }
                             }
+                            .buttonStyle(.borderedProminent)
+                            
                         }
-                        .buttonStyle(.borderedProminent)
- 
                     }
                 }
+                // フッター
+                Button("Restore Purchases", action: restore)
+                
+                Button("Cancel") {
+                    dismiss()
+                }
+                .padding(.top, 20)
+                
+                
             }
         }
         .onChange(of: dataController.fullVersionUnlocked) { _ in
@@ -96,10 +127,10 @@ struct StoreView: View {
     /// すべての商品をロードするメソッド
     func load() async {
         loadState = .loading
-
+        
         do {
             try await dataController.loadProducts()
-
+            
             if dataController.products.isEmpty {
                 loadState = .error
             } else {

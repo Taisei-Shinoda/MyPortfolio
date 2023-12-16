@@ -114,6 +114,9 @@
 "Restore Purchases" = "購入履歴の復元";
 "In-app purchases are disabled" = "アプリ内課金は無効です";
 "You can't purchase the premium unlock because in-app purchases are disabled on this device.Please ask whomever manages your device for assistance." = "このデバイスではアプリ内購入が無効になっているため、ロック解除を購入できません。デバイスを管理している人にサポートを求めてください。";
+"Upgrade Today!" = "本日アップグレードする!";
+"Get the most out of the app" = "アプリを最大限活用しましょう";
+
 
 
 /* DATA */
