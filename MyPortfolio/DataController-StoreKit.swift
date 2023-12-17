@@ -38,13 +38,14 @@ extension DataController {
     }
     
     /// products 配列に既に製品がある場合は、すぐに終了します。
-    /// 0.2秒の小さな待機を追加して、アプリがロードしようとしていることをユーザーが視覚的に確認できるようにします。
+    /// 0.8秒の小さな待機を追加して、アプリがロードしようとしていることをユーザーが視覚的に確認できるようにします。
     @MainActor
     func loadProducts() async throws {
         // 製品を複数回ロードしない
         guard products.isEmpty else { return }
 
-        try await Task.sleep(for: .seconds(0.2))
+        /// App Store Connect への接続速度に依存するため、ここのサイズを少し増やすのは良いアイデア
+        try await Task.sleep(for: .seconds(0.8))
         products = try await Product.products(for: [Self.unlockPremiumProductID])
     }
     

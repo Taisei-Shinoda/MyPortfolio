@@ -5,15 +5,10 @@
   ],
   "products" : [
     {
-      "displayPrice" : "2.99",
+      "displayPrice" : "3",
       "familyShareable" : true,
       "internalID" : "AB0064EA",
       "localizations" : [
-        {
-          "description" : "",
-          "displayName" : "",
-          "locale" : "en_US"
-        },
         {
           "description" : "アプリの完全なバージョンを取得",
           "displayName" : "Premium Unlock",

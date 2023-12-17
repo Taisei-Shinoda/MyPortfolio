@@ -51,25 +51,44 @@ struct StoreView: View {
                         switch loadState {
                         case .loading:
                             Text("Loading...")
-                                .font(.headline)
+                                .font(.title2.bold())
+                                .padding(.top, 50)
                             ProgressView()
+                                .controlSize(.large)
                             
                         case .loaded:
                             ForEach(dataController.products) { product in
-                                VStack(alignment: .leading) {
-                                    Text(product.displayName)
-                                        .font(.title)
-                                    Text(product.description)
-                                    
-                                    Button("Buy Now") {
-                                        purchase(product)
+                                Button {
+                                    purchase(product)
+                                } label: {
+                                    HStack {
+                                        VStack(alignment: .leading) {
+                                            Text(product.displayName)
+                                                .font(.title2.bold())
+                                            Text(product.description)
+                                                .font(.callout)
+                                                
+                                        }
+
+                                        Spacer()
+
+                                        Text(product.displayPrice)
+                                            .font(.title)
+                                            .fontDesign(.rounded)
                                     }
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 10)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.gray.opacity(0.2))
+                                    .cornerRadius(.infinity)
                                 }
+                                .buttonStyle(.plain)
                             }
                             
                             
                         case .error:
                             Text("Sorry, there was an error loading our store.")
+                                .padding(.top, 50)
                             Button("Try Again") {
                                 Task {
                                     await load()
@@ -79,6 +98,7 @@ struct StoreView: View {
                             
                         }
                     }
+                    .padding(20)
                 }
                 // フッター
                 Button("Restore Purchases", action: restore)
