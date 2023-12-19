@@ -13,6 +13,11 @@ extension ContentView {
     class ViewModel: ObservableObject {
         var dataController: DataController
 
+        /// ユーザーにレビューを求めるためのプロパティ
+        var shouldRequestReview: Bool {
+            dataController.count(for: Tag.fetchRequest()) >= 5
+        }
+        
         init(dataController: DataController) {
             self.dataController = dataController
         }

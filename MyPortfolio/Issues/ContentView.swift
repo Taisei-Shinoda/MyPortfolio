@@ -11,6 +11,9 @@ struct ContentView: View {
     
     @StateObject var viewModel: ViewModel
     
+    /// レビューアクションの読み取り
+    @Environment(\.requestReview) var requestReview
+    
     init(dataController: DataController) {
         let viewModel = ViewModel(dataController: dataController)
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -32,6 +35,13 @@ struct ContentView: View {
             Text(tag.tagName)
         }
         .toolbar(content: ContentViewToolbar.init)
+        .onAppear(perform: askForReview)
+    }
+    
+    func askForReview() {
+        if viewModel.shouldRequestReview {
+            requestReview()
+        }
     }
     
 }
